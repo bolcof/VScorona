@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4239609958598901909}
   m_Layer: 0
   m_Name: Shop_yellow
-  m_TagString: Untagged
+  m_TagString: Shop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4058320767493917014}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -106,9 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8df93bcf96c98242902397636f83232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DishType: 3
-  Mats:
-  - {fileID: 2100000, guid: 33314ea66a0327241ba8820ea27ec8e9, type: 2}
-  - {fileID: 2100000, guid: 3f55ed707408c9146947666f3f4d8632, type: 2}
-  - {fileID: 2100000, guid: f350fee0cb854f244b55f95c0a99a25f, type: 2}
-  - {fileID: 2100000, guid: c00a9b96f41dbda4ebaf2236acc857a7, type: 2}
+  DishType: 4

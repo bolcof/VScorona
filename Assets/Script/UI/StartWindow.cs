@@ -1,18 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartWindow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerBehaviour Player;
+
+    private void Start()
     {
-        
+        Player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void pushStart()
     {
-        
+        Player.isPlaying = true;
+        Player.speed = 8.0f;
+
+        //Animationに書き換える
+        this.gameObject.GetComponent<CanvasGroup>().alpha = 0.0f;
+        this.gameObject.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        this.gameObject.GetComponent<CanvasGroup>().interactable = false;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Main");
     }
 }
