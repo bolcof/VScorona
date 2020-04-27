@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ObjectMaker : MonoBehaviour
 {
-    public GameObject ObjRoot;
+    private GameObject ObjRoot, PlayerObj;
+    private int exPlayerObjPos = 0;
+    private int exSpawnPos = 100;
+    private int distance = 10;
 
     public GameObject Man_standing, Man_walking;
     public GameObject[] Shop, Customer;
@@ -22,9 +25,20 @@ public class ObjectMaker : MonoBehaviour
     {
         Gstate = GameObject.Find("GameState").GetComponent<GameState>();
         ObjRoot = GameObject.Find("ObjectRoot");
+        PlayerObj = GameObject.FindWithTag("Player");
+
         for(int i = 30; i < 100; i += 10)
         {
             Spawn(i, 0);
+        }
+    }
+
+    public void Update()
+    {
+        if (PlayerObj.transform.position.z >= exPlayerObjPos + distance)
+        {
+            Spawn(exSpawnPos + distance, Gstate.Level);
+            exPlayerObjPos = Mathf.FloorToInt(PlayerObj.transform.position.z) + distance;
         }
     }
 
@@ -47,12 +61,12 @@ public class ObjectMaker : MonoBehaviour
         }
     }
 
-    private bool[] Combination (int n, int r)
+    private bool[] Combination (int size, int trueNum)
     {
-        bool[] tmp = new bool[n];
-        for(int i = 0; i < n; i++)
+        bool[] tmp = new bool[size];
+        for(int i = 0; i < size; i++)
         {
-            if (i < r)
+            if (i < trueNum)
             {
                 tmp[i] = true;
             }
@@ -62,14 +76,19 @@ public class ObjectMaker : MonoBehaviour
             }
         }
 
-        for(int i = 0; i < n; i++)
+        for(int i = 0; i < size; i++)
         {
-            int j = Random.Range(0, 100000) % n;
+            int j = Random.Range(0, 100000) % size;
             bool t = tmp[i];
             tmp[i] = tmp[j];
             tmp[j] = t;
         }
 
         return tmp;
+    }
+
+    private void ChangeObj(GameObject target)
+    {
+
     }
 }
