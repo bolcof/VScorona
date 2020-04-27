@@ -11,6 +11,7 @@ public class ObjectMaker : MonoBehaviour
     public GameObject Amabie;
 
     public GameObject[] UnitFrame = new GameObject[2];
+    int[,] EnemyNumLib = { { 0, 0, 1, 1, 1, 2 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 2, 2, 2, 3 }, { 1, 2, 2, 3, 3, 3 }, { 2, 2, 3, 3, 3, 4 } };
 
     private GameObject[][] ObjLog = new GameObject[10][];
     private GameObject MustObj;
@@ -21,44 +22,29 @@ public class ObjectMaker : MonoBehaviour
     {
         Gstate = GameObject.Find("GameState").GetComponent<GameState>();
         ObjRoot = GameObject.Find("ObjectRoot");
-    }
-
-    public void Spawn(float posZ)
-    {
-        GameObject Unit = Instantiate(UnitFrame[Random.Range(0, 2)], new Vector3(0.0f, 0.0f, posZ), Quaternion.identity, ObjRoot.transform);
-
-        if (!didNeedMust())
+        for(int i = 30; i < 100; i += 10)
         {
-            Unit.GetComponent<Unit>().Spawn(RandomizeEnemy(Unit.GetComponent<Unit>().slot));
-        }
-        else
-        {
-
+            Spawn(i, 0);
         }
     }
 
-    public GameObject[] RandomizeEnemy(int slot)
+    public void Spawn(float posZ, int Level)
     {
-        GameObject[] Objs = new GameObject[slot];
-        /* 0,0,1,1,1,2  Lv.1 : 1,1,1,2,2,2  Lv.2 : 1,1,2,2,2,3  Lv.3 : 1,2,2,3,3,3  Lv.4 : 2,2,3,3,3,4 */
-        int[,] EnemyNumLib = { { 0, 0, 1, 1, 1, 2 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 2, 2, 2, 3 }, { 1, 2, 2, 3, 3, 3 }, { 2, 2, 3, 3, 3, 4 } };
+        GameObject Unit = Instantiate(UnitFrame[1], new Vector3(0.0f, 0.0f, posZ), Quaternion.identity, ObjRoot.transform);
 
-        int EnemyNum = EnemyNumLib[Gstate.Level, Random.Range(0, 6)];
-        
+        int EnemyNum = EnemyNumLib[Level, Random.Range(0, 6)];
 
-        return Objs;
-    }
+        Debug.Log(Unit.GetComponent<Unit>().Slot);
 
-    public GameObject[] RandomizeEnemy(int slot, GameObject must)
-    {
-        GameObject[] Objs = new GameObject[slot];
+        bool[] tmp = Combination(Unit.GetComponent<Unit>().Slot, EnemyNum);
+        for(int i = 0; i < Unit.GetComponent<Unit>().Slot; i++)
+        {
+            if (tmp[i])
+            {
+                Unit.GetComponent<Unit>().Spawn(Man_standing, i);
+            }
 
-        return Objs;
-    } 
-
-    private bool didNeedMust()
-    {
-        return false;
+        }
     }
 
     private bool[] Combination (int n, int r)

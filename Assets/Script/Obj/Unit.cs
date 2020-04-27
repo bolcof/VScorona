@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public int slot;
+    public int Slot;
     public GameObject[] ObjRoots;
 
     // Start is called before the first frame update
@@ -12,12 +12,10 @@ public class Unit : MonoBehaviour
     {
         
     }
-    
-    public void Spawn(GameObject[] Objs)
+
+    public void Spawn(GameObject Obj, int posID)
     {
-        for(int i = 0; i < slot; i++)
-        {
-            Instantiate(Objs[i], ObjRoots[i].transform.position, Quaternion.identity, ObjRoots[i].transform);
-        }
+        Debug.Log(posID);
+        Instantiate(Obj, ObjRoots[posID].transform.position, Quaternion.identity, ObjRoots[posID].transform);
     }
 }

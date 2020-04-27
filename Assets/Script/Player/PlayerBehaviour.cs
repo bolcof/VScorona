@@ -54,9 +54,8 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 posX = -2.5f;
             }
+            this.gameObject.transform.position = new Vector3(posX, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
         }
-
-        this.gameObject.transform.position = new Vector3(posX, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
         this.gameObject.transform.Translate(0, 0, speed * Time.deltaTime);
     }
 
