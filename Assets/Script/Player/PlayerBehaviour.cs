@@ -19,12 +19,15 @@ public class PlayerBehaviour : MonoBehaviour
     public Text devText;
     public GameObject ResultPanel;
 
+    public GameState Gstate;
+
     // Start is called before the first frame update
     void Start()
     {
         Mask = 2;
         Resist = true;
         ResultPanel = GameObject.Find("ResultPanel");
+        Gstate = GameObject.Find("GameState").GetComponent<GameState>();
     }
 
     // Update is called once per frame
@@ -36,7 +39,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (speed != 0)
             {
-                speed -= Time.deltaTime*3f;
+                speed -= Time.deltaTime * 3.6f;
                 if (speed < 0.05f) { speed = 0.0f; }
             }
         }
@@ -91,7 +94,6 @@ public class PlayerBehaviour : MonoBehaviour
                 break;
 
             case "Customer":
-                Debug.Log("cust");
                 if (DishType == other.GetComponent<Customer>().DishType)
                 {
                     devText.text = "届けた！";
