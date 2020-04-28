@@ -27,7 +27,7 @@ public class ObjectMaker : MonoBehaviour
         ObjRoot = GameObject.Find("ObjectRoot");
         PlayerObj = GameObject.FindWithTag("Player");
 
-        for(int i = 30; i < 100; i += 10)
+        for(int i = 30; i <= 240; i += 16)
         {
             Spawn(i, 0);
         }
@@ -38,7 +38,8 @@ public class ObjectMaker : MonoBehaviour
         if (PlayerObj.transform.position.z >= exPlayerObjPos + distance)
         {
             Spawn(exSpawnPos + distance, Gstate.Level);
-            exPlayerObjPos = Mathf.FloorToInt(PlayerObj.transform.position.z) + distance;
+            exSpawnPos += distance;
+            exPlayerObjPos += distance;
         }
     }
 
@@ -47,8 +48,6 @@ public class ObjectMaker : MonoBehaviour
         GameObject Unit = Instantiate(UnitFrame[1], new Vector3(0.0f, 0.0f, posZ), Quaternion.identity, ObjRoot.transform);
 
         int EnemyNum = EnemyNumLib[Level, Random.Range(0, 6)];
-
-        Debug.Log(Unit.GetComponent<Unit>().Slot);
 
         bool[] tmp = Combination(Unit.GetComponent<Unit>().Slot, EnemyNum);
         for(int i = 0; i < Unit.GetComponent<Unit>().Slot; i++)
