@@ -45,14 +45,14 @@ public class PlayerBehaviour : MonoBehaviour
         }
         else
         {
-            posX = (Input.mousePosition.x - Screen.width / 2) / (Screen.width / 2) * 3.2f;
-            if (posX > 2.5f)
+            posX = (Input.mousePosition.x - Screen.width / 2) / (Screen.width / 2) * 5.4f;
+            if (posX > 5.0f)
             {
-                posX = 2.5f;
+                posX = 5.0f;
             }
-            else if (posX < -2.5f)
+            else if (posX < -5.0f)
             {
-                posX = -2.5f;
+                posX = -5.0f;
             }
             this.gameObject.transform.position = new Vector3(posX, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
         }

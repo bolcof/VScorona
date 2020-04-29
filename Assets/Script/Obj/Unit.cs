@@ -15,7 +15,6 @@ public class Unit : MonoBehaviour
 
     public void Spawn(GameObject Obj, int posID)
     {
-        Debug.Log(posID);
         Instantiate(Obj, ObjRoots[posID].transform.position, Quaternion.identity, ObjRoots[posID].transform);
     }
 }

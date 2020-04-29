@@ -14,11 +14,14 @@ public class Destroyer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.position = new Vector3(0, 5, PlayerObj.transform.position.z - 60);
+        this.gameObject.transform.position = new Vector3(0, 5, PlayerObj.transform.position.z - 175);
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        Destroy(col.gameObject);
+        if (!col.gameObject.CompareTag("StageRoot"))
+        {
+            Destroy(col.gameObject);
+        }
     }
 }

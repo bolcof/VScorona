@@ -10,7 +10,7 @@ public class StageMaker : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Instantiate(GroundObj, new Vector3(0.0f, 0.0f, this.gameObject.transform.position.z + 150.0f), Quaternion.identity, GameObject.Find("GroundRoot").transform.parent);
+            Instantiate(GroundObj, new Vector3(5.0f, 0.0f, this.gameObject.transform.position.z + 300.0f), Quaternion.Euler(0.0f, 90.0f, 0.0f), GameObject.Find("GroundRoot").transform);
         }
     }
 }
