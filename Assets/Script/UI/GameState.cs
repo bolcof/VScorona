@@ -4,18 +4,36 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    public int Level; /* enemy-> Lv.0 : 0,0,1,1,1,2,  Lv.1 : 1,1,1,2,2,2  Lv.2 : 1,1,2,2,2,3  Lv.3 : 1,2,2,3,3,3  Lv.4 : 2,2,3,3,3,4 */
-    public int MissionCleared;
+    public int Level = 1;
+    public int MissionCleared = 0;
+
+    private int[] LevelUpLib = {2, 2, 3, 4, 6, 9, 14, 15, 15, 15, 15, 15, 15, 15, 15, 9999};
+    private int nextLevel = 2;
+
+    private PlayerBehaviour Player;
 
     // Start is called before the first frame update
     void Start()
     {
-        Level = 1;
+        Player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void MissionClear()
+    {
+        MissionCleared++;
+
+        if(MissionCleared >= nextLevel)
+        {
+            nextLevel += LevelUpLib[Level];
+            Level++;
+            Player.speed += 2.5f;
+        }
+
     }
 }

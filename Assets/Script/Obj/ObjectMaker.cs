@@ -49,12 +49,12 @@ public class ObjectMaker : MonoBehaviour
 
         int EnemyNum = EnemyNumLib[Level, Random.Range(0, 6)];
 
-        bool[] tmp = Combination(Unit.GetComponent<Unit>().Slot, EnemyNum);
-        for(int i = 0; i < Unit.GetComponent<Unit>().Slot; i++)
+        bool[] tmp = Combination(Unit.GetComponent<ObjUnit>().Slot, EnemyNum);
+        for(int i = 0; i < Unit.GetComponent<ObjUnit>().Slot; i++)
         {
             if (tmp[i])
             {
-                Unit.GetComponent<Unit>().Spawn(Man_standing, i);
+                Unit.GetComponent<ObjUnit>().Spawn(Man_standing, i);
             }
 
         }
