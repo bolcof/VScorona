@@ -6,6 +6,7 @@ public class GameState : MonoBehaviour
 {
     public int Level = 1;
     public int MissionCleared = 0;
+    public float EarnedMoney;
 
     private int[] LevelUpLib = {2, 2, 3, 4, 6, 9, 14, 15, 15, 15, 15, 15, 15, 15, 15, 9999};
     private int nextLevel = 2;

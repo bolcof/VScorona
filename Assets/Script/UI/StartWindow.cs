@@ -22,9 +22,4 @@ public class StartWindow : MonoBehaviour
         
         this.gameObject.GetComponent<Animator>().SetBool("Open", false);
     }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene("Main");
-    }
 }
