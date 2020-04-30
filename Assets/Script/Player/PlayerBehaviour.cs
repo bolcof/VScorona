@@ -8,6 +8,8 @@ public class PlayerBehaviour : MonoBehaviour
     public bool isPlaying;
 
     public float speed;
+    public float PlayTime = 0.0f;
+    private Rigidbody PlayerRB;
 
     public Shop.DISHTYPE DishType;
 
@@ -19,6 +21,9 @@ public class PlayerBehaviour : MonoBehaviour
     public Text devText;
     public GameObject ResultPanel;
 
+    float rotY = 0;
+    float exPosX;
+
     public GameState Gstate;
 
     // Start is called before the first frame update
@@ -26,6 +31,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Mask = 2;
         Resist = true;
+        PlayerRB = this.gameObject.GetComponent<Rigidbody>();
         ResultPanel = GameObject.Find("ResultPanel");
         Gstate = GameObject.Find("GameState").GetComponent<GameState>();
     }
@@ -46,6 +52,14 @@ public class PlayerBehaviour : MonoBehaviour
         else
         {
             posX = (Input.mousePosition.x - Screen.width / 2) / (Screen.width / 2) * 5.4f;
+
+            PlayTime += Time.deltaTime;
+            if (PlayTime > 10.0f)
+            {
+                speed += 3.5f;
+                PlayTime = 0.0f;
+            }
+
             if (posX > 5.0f)
             {
                 posX = 5.0f;
@@ -54,9 +68,37 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 posX = -5.0f;
             }
+
+            rotY += (posX - exPosX) * 25;
+
             this.gameObject.transform.position = new Vector3(posX, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
         }
-        this.gameObject.transform.Translate(0, 0, speed * Time.deltaTime);
+
+        if (Mathf.Abs(rotY) <= 0.2f){
+            rotY = 0;
+        }
+        else
+        {
+            rotY *= 0.9f;
+        }
+
+        if (rotY >= 15.0f)
+        {
+            rotY = 15.0f;
+        }
+        else if(rotY <= -15.0f)
+        {
+            rotY = -15.0f;
+        }
+
+        exPosX = posX;
+        //this.gameObject.transform.Translate(0, 0, speed * Time.deltaTime);
+        Debug.Log(PlayerRB.velocity.z);
+        if (PlayerRB.velocity.z < speed)
+        {
+            PlayerRB.AddForce(0.0f, 0.0f, speed * 0.6f);
+        }
+        this.gameObject.transform.rotation = Quaternion.Euler(0.0f, rotY, 0.0f);
     }
 
     private void OnTriggerEnter(Collider other)

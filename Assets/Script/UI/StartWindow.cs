@@ -16,8 +16,10 @@ public class StartWindow : MonoBehaviour
     public void pushStart()
     {
         Player.isPlaying = true;
-        Player.speed = 10.0f;
+        Player.speed = 14.0f;
 
+        Player.PlayTime = 0.0f;
+        
         this.gameObject.GetComponent<Animator>().SetBool("Open", false);
     }
 

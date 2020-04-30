@@ -8,6 +8,6 @@ public class FollowingCamera : MonoBehaviour
 
     private void Update()
     {
-        this.gameObject.transform.position = new Vector3(0, 8, PlayerObj.transform.position.z - 15);
+        this.gameObject.transform.position = new Vector3(0, 8, PlayerObj.transform.position.z - 17);
     }
 }

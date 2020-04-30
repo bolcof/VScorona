@@ -6,10 +6,10 @@ public class ObjectMaker : MonoBehaviour
 {
     private GameObject ObjRoot, PlayerObj;
     private int exPlayerObjPos = 0;
-    private int exSpawnPos = 100;
-    private int distance = 10;
+    private int exSpawnPos = 232;
+    private int distance = 16;
 
-    public GameObject Man_standing, Man_walking;
+    public GameObject Virus;
     public GameObject[] Shop, Customer;
     public GameObject Amabie;
 
@@ -18,6 +18,7 @@ public class ObjectMaker : MonoBehaviour
 
     private GameObject[][] ObjLog = new GameObject[10][];
     private GameObject MustObj;
+    private int NoShopLog = 0;
 
     public GameState Gstate;
 
@@ -27,7 +28,7 @@ public class ObjectMaker : MonoBehaviour
         ObjRoot = GameObject.Find("ObjectRoot");
         PlayerObj = GameObject.FindWithTag("Player");
 
-        for(int i = 30; i <= 240; i += 16)
+        for(int i = 24; i <= 232; i += 16)
         {
             Spawn(i, 0);
         }
@@ -54,10 +55,23 @@ public class ObjectMaker : MonoBehaviour
         {
             if (tmp[i])
             {
-                Unit.GetComponent<ObjUnit>().Spawn(Man_standing, i);
+                Unit.GetComponent<ObjUnit>().Spawn(Virus, i);
             }
 
         }
+
+        float seed = Random.Range(0, 100.0f);
+        if (seed <= NoShopLog * 2.5f + 3.0f)
+        {
+            Debug.Log(NoShopLog * 2.5f + 3.0f);
+            ChangeObj(Shop[Random.Range(0, Shop.Length)], posZ);
+            NoShopLog = 0;
+        }
+        else
+        {
+            NoShopLog++;
+        }
+
     }
 
     private bool[] Combination (int size, int trueNum)
@@ -86,7 +100,19 @@ public class ObjectMaker : MonoBehaviour
         return tmp;
     }
 
-    private void ChangeObj(GameObject target)
+    private void ChangeObj(GameObject target, float posZ)
+    {
+        float seed = Random.Range(0.0f, 1.0f);
+        if(seed > 0.5f) {
+            Instantiate(target, new Vector3(4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
+        }
+        else
+        {
+            Instantiate(target, new Vector3(-4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
+        }
+    }
+
+    public void GetDish(int id)
     {
 
     }
