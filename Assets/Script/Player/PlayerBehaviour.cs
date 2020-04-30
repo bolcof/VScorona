@@ -92,8 +92,6 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         exPosX = posX;
-        //this.gameObject.transform.Translate(0, 0, speed * Time.deltaTime);
-        Debug.Log(PlayerRB.velocity.z);
         if (PlayerRB.velocity.z < speed)
         {
             PlayerRB.AddForce(0.0f, 0.0f, speed * 0.6f);
@@ -150,9 +148,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void GameOver()
     {
-        
-        ResultPanel.GetComponent<CanvasGroup>().alpha = 1.0f;
-        ResultPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
-        ResultPanel.GetComponent<CanvasGroup>().interactable = true;
+        ResultPanel.SetActive(true);
+        ResultPanel.GetComponent<Animator>().SetBool("Open", true);
     }
 }
