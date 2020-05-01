@@ -104,12 +104,7 @@ public class PlayerBehaviour : MonoBehaviour
         switch (other.tag)
         {
             case "Enemy":
-                if (Resist)
-                {
-                    Resist = false;
-                    resistText.text = "免疫:ナシ";
-                }
-                else
+                if (!Resist)
                 {
                     Mask--;
                     if (Mask == -1)
