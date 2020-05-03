@@ -6,7 +6,7 @@ public class ObjectMaker : MonoBehaviour
 {
     private GameObject ObjRoot, PlayerObj;
     private int exPlayerObjPos = 0;
-    private int exSpawnPos = 270;
+    private int exSpawnPos = 216;
     private int distance = 18;
 
     public GameObject Virus;
@@ -16,9 +16,10 @@ public class ObjectMaker : MonoBehaviour
     public GameObject[] UnitFrame = new GameObject[2];
     int[,] EnemyNumLib = { { 0, 0, 1, 1, 1, 2 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 2, 2, 2, 3 }, { 1, 2, 2, 3, 3, 3 }, { 2, 2, 3, 3, 3, 4 } };
 
-    private GameObject[][] ObjLog = new GameObject[10][];
-    private GameObject MustObj;
+    public Shop.DISHTYPE nowDishType  = global::Shop.DISHTYPE.NONE;
+
     private int NoShopLog = 0;
+    private int NoMuchCustomerLog = 0;
 
     public GameState Gstate;
 
@@ -63,8 +64,7 @@ public class ObjectMaker : MonoBehaviour
         float seed = Random.Range(0, 100.0f);
         if (seed <= NoShopLog * 2.5f + 3.0f)
         {
-           // Debug.Log(NoShopLog * 2.5f + 3.0f);
-            ChangeObj(Shop[Random.Range(0, Shop.Length)], posZ);
+            SpawnShop(Shop[Random.Range(0, Shop.Length)], posZ);
             NoShopLog = 0;
         }
         else
@@ -102,40 +102,24 @@ public class ObjectMaker : MonoBehaviour
 
     private void SpawnShop(GameObject target, float posZ)
     {
-        float seed = Random.Range(0.0f, 1.0f);
-        if(seed > 0.5f) {
-            Instantiate(target, new Vector3(4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
-        }
-        else
-        {
-            Instantiate(target, new Vector3(-4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
-        }
+        float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 4.25f : -4.25f;
+        float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 11.0f : 4.0f;
+
+        Instantiate(target, new Vector3(seed, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
     }
 
     private void SpawnCustomer(GameObject target, float posZ)
     {
-        float seed = Random.Range(0.0f, 1.0f);
-        if (seed > 0.5f)
-        {
-            Instantiate(target, new Vector3(4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
-        }
-        else
-        {
-            Instantiate(target, new Vector3(-4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
-        }
+        float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 4.25f : -4.25f;
+        float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 7.0f : 14.0f;
+
+        Instantiate(target, new Vector3(seed, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
     }
 
     private void SpawnSpecial(GameObject target, float posZ)
     {
-        float seed = Random.Range(0.0f, 1.0f);
-        if (seed > 0.5f)
-        {
-            Instantiate(target, new Vector3(4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
-        }
-        else
-        {
-            Instantiate(target, new Vector3(-4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
-        }
+        float seed = Random.Range(-2.0f, 2.0f);
+        Instantiate(target, new Vector3(seed, 0.0f, posZ + 9.0f), Quaternion.identity, ObjRoot.transform);
     }
 
     public void GetDish(int id)

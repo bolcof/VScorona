@@ -126,7 +126,7 @@ public class PlayerBehaviour : MonoBehaviour
                 break;
 
             case "Shop":
-
+                Debug.Log(other.GetComponent<Shop>().DishType);
                 if (DishType == Shop.DISHTYPE.NONE)
                 {
                     DishType = other.GetComponent<Shop>().DishType;
@@ -154,6 +154,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         ResultPanel.GetComponent<Animator>().SetBool("Open", true);
         MainUI.GetComponent<Animator>().SetBool("Open", false);
-        StartPanel.GetComponent<StartWindow>().HideTopBanner();
+        StartPanel.GetComponent<StartWindow>().goResult();
     }
 }

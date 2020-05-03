@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8df93bcf96c98242902397636f83232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DishType: 4
+  DishType: 3
 --- !u!54 &-2082729782223802293
 Rigidbody:
   m_ObjectHideFlags: 0

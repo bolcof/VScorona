@@ -3585,11 +3585,16 @@ MonoBehaviour:
   - {fileID: 4058320767493917014, guid: fd10878a0fb41b44398eccb8debc41c4, type: 3}
   - {fileID: 4058320767493917014, guid: 6513ee2aa86094845b33ee0754120c89, type: 3}
   - {fileID: 4058320767493917014, guid: f63a420c052090a4883e24b39c01694a, type: 3}
-  Customer: []
+  Customer:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Amabie: {fileID: 0}
   UnitFrame:
   - {fileID: 311884385143504738, guid: 29f7027090cfdbb4ca4b6ec5c6d6cb3a, type: 3}
   - {fileID: 311884385143504738, guid: 2071a3989ff48354aa25039ce9d4b134, type: 3}
+  nowDishType: 0
   Gstate: {fileID: 0}
 --- !u!1 &2111357754
 GameObject:
@@ -3699,10 +3704,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 1
+  m_Height: 3
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0.5, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &2118687894
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3787,13 +3792,14 @@ MonoBehaviour:
   Dish: {fileID: 1372106855}
   dishes:
   - {fileID: 21300000, guid: 4f38233b5203af34dbd0562b17254b09, type: 3}
-  - {fileID: -5884737247973293422, guid: 2b1d763686b5fe641848a26d5b500ee5, type: 3}
-  - {fileID: 4179824587198283991, guid: 2b1d763686b5fe641848a26d5b500ee5, type: 3}
   - {fileID: -3605872766991222159, guid: 2b1d763686b5fe641848a26d5b500ee5, type: 3}
+  - {fileID: 4179824587198283991, guid: 2b1d763686b5fe641848a26d5b500ee5, type: 3}
   - {fileID: 1298414854573393902, guid: 2b1d763686b5fe641848a26d5b500ee5, type: 3}
+  - {fileID: -5884737247973293422, guid: 2b1d763686b5fe641848a26d5b500ee5, type: 3}
   nowDelivering: {fileID: 579739242}
   speedText: {fileID: 1835094188}
   moneyText: {fileID: 617300181}
+  StartPanel: {fileID: 438019867}
   MainUI: {fileID: 1785025425}
   ResultPanel: {fileID: 283251810}
   Gstate: {fileID: 0}

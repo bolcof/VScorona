@@ -23,6 +23,7 @@ public class ResultWindow : MonoBehaviour
 
     public void Restart()
     {
+        GameObject.Find("StartPanel").GetComponent<StartWindow>().HideAll();
         SceneManager.LoadScene("Main");
     }
 

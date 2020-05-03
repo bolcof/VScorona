@@ -7,10 +7,10 @@ public class Shop : MonoBehaviour
     public enum DISHTYPE
     {
         NONE = 0,
-        Red = 1,
-        Green = 2,
-        Blue = 3,
-        Yellow = 4
+        Sushi = 1,
+        Pizza = 2,
+        Humberger = 3,
+        Ramen = 4
     }
 
     public DISHTYPE DishType;
