@@ -6,8 +6,8 @@ public class ObjectMaker : MonoBehaviour
 {
     private GameObject ObjRoot, PlayerObj;
     private int exPlayerObjPos = 0;
-    private int exSpawnPos = 232;
-    private int distance = 16;
+    private int exSpawnPos = 270;
+    private int distance = 18;
 
     public GameObject Virus;
     public GameObject[] Shop, Customer;
@@ -28,7 +28,7 @@ public class ObjectMaker : MonoBehaviour
         ObjRoot = GameObject.Find("ObjectRoot");
         PlayerObj = GameObject.FindWithTag("Player");
 
-        for(int i = 24; i <= 232; i += 16)
+        for(int i = 36; i <= exSpawnPos; i += distance)
         {
             Spawn(i, 0);
         }
@@ -100,10 +100,36 @@ public class ObjectMaker : MonoBehaviour
         return tmp;
     }
 
-    private void ChangeObj(GameObject target, float posZ)
+    private void SpawnShop(GameObject target, float posZ)
     {
         float seed = Random.Range(0.0f, 1.0f);
         if(seed > 0.5f) {
+            Instantiate(target, new Vector3(4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
+        }
+        else
+        {
+            Instantiate(target, new Vector3(-4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
+        }
+    }
+
+    private void SpawnCustomer(GameObject target, float posZ)
+    {
+        float seed = Random.Range(0.0f, 1.0f);
+        if (seed > 0.5f)
+        {
+            Instantiate(target, new Vector3(4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
+        }
+        else
+        {
+            Instantiate(target, new Vector3(-4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
+        }
+    }
+
+    private void SpawnSpecial(GameObject target, float posZ)
+    {
+        float seed = Random.Range(0.0f, 1.0f);
+        if (seed > 0.5f)
+        {
             Instantiate(target, new Vector3(4.25f, 0.0f, posZ + 8.0f), Quaternion.identity, ObjRoot.transform);
         }
         else

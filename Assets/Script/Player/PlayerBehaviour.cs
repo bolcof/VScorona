@@ -25,7 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public Text speedText, moneyText;
 
-    public GameObject MainUI, ResultPanel;
+    public GameObject StartPanel, MainUI, ResultPanel;
 
     float rotY = 0;
     float exPosX;
@@ -154,5 +154,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         ResultPanel.GetComponent<Animator>().SetBool("Open", true);
         MainUI.GetComponent<Animator>().SetBool("Open", false);
+        StartPanel.GetComponent<StartWindow>().HideTopBanner();
     }
 }

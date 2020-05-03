@@ -13,7 +13,7 @@ public class StartWindow : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this);
-
+        Debug.Log("Start");
         string appID = "ca-app-pub-3940256099942544~3347511713";
 #if UNITY_IOS && !UNITY_EDITOR
         appID = "ca-app-pub-7199806318674055~8077951056"
@@ -82,5 +82,12 @@ public class StartWindow : MonoBehaviour
         
         this.gameObject.GetComponent<Animator>().SetBool("Open", false);
         mainUIwindow.GetComponent<Animator>().SetBool("Open", true);
+    }
+
+    public void HideTopBanner()
+    {
+#if !UNITY_EDITOR
+        bannerViewTop.Hide();
+#endif
     }
 }
