@@ -63,7 +63,7 @@ public class ObjectMaker : MonoBehaviour
         float seed = Random.Range(0, 100.0f);
         if (seed <= NoShopLog * 2.5f + 3.0f)
         {
-            Debug.Log(NoShopLog * 2.5f + 3.0f);
+           // Debug.Log(NoShopLog * 2.5f + 3.0f);
             ChangeObj(Shop[Random.Range(0, Shop.Length)], posZ);
             NoShopLog = 0;
         }

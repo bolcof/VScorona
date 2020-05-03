@@ -17,9 +17,15 @@ public class PlayerBehaviour : MonoBehaviour
     public bool Resist;
 
     //テキストではなくす
-    public Text maskText, resistText, dishText;
-    public Text devText;
-    public GameObject ResultPanel;
+    public Text maskText;
+
+    public Image Dish;
+    public Sprite[] dishes = new Sprite[5];
+    public Image nowDelivering;
+
+    public Text speedText, moneyText;
+
+    public GameObject MainUI, ResultPanel;
 
     float rotY = 0;
     float exPosX;
@@ -30,7 +36,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         Mask = 2;
-        Resist = true;
+        Resist = false;
         PlayerRB = this.gameObject.GetComponent<Rigidbody>();
         ResultPanel = GameObject.Find("ResultPanel");
         Gstate = GameObject.Find("GameState").GetComponent<GameState>();
@@ -45,7 +51,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (speed != 0)
             {
-                speed -= Time.deltaTime * 3.6f;
+                speed *= 0.9f;
                 if (speed < 0.05f) { speed = 0.0f; }
             }
         }
@@ -92,6 +98,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         exPosX = posX;
+        speedText.text = "時速：" + PlayerRB.velocity.z.ToString("F0") + "km/h";
         if (PlayerRB.velocity.z < speed)
         {
             PlayerRB.AddForce(0.0f, 0.0f, speed * 0.6f);
@@ -104,6 +111,7 @@ public class PlayerBehaviour : MonoBehaviour
         switch (other.tag)
         {
             case "Enemy":
+                Debug.Log("Enemy");
                 if (!Resist)
                 {
                     Mask--;
@@ -113,7 +121,7 @@ public class PlayerBehaviour : MonoBehaviour
                         GameOver();
                         isPlaying = false;
                     }
-                    maskText.text = "Mask:" + Mask.ToString();
+                    maskText.text = Mask.ToString();
                 }
                 break;
 
@@ -122,7 +130,8 @@ public class PlayerBehaviour : MonoBehaviour
                 if (DishType == Shop.DISHTYPE.NONE)
                 {
                     DishType = other.GetComponent<Shop>().DishType;
-                    dishText.text = "所持料理：" + DishType.ToString();
+                    Dish.sprite = dishes[DishType.GetHashCode()];
+                    nowDelivering.enabled = true;
                 }
 
                 break;
@@ -130,11 +139,11 @@ public class PlayerBehaviour : MonoBehaviour
             case "Customer":
                 if (DishType == other.GetComponent<Customer>().DishType)
                 {
-                    devText.text = "届けた！";
+                    nowDelivering.enabled = false;
                 }
                 else
                 {
-                    devText.text = "間違い";
+
                 }
 
                 break;
@@ -143,7 +152,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void GameOver()
     {
-        ResultPanel.SetActive(true);
         ResultPanel.GetComponent<Animator>().SetBool("Open", true);
+        MainUI.GetComponent<Animator>().SetBool("Open", false);
     }
 }
