@@ -105,7 +105,7 @@ public class ObjectMaker : MonoBehaviour
         float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 4.25f : -4.25f;
         float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 11.0f : 4.0f;
 
-        Instantiate(target, new Vector3(seed, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
+        Instantiate(target, new Vector3(seed, 1.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
     }
 
     private void SpawnCustomer(GameObject target, float posZ)
@@ -113,7 +113,7 @@ public class ObjectMaker : MonoBehaviour
         float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 4.25f : -4.25f;
         float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 7.0f : 14.0f;
 
-        Instantiate(target, new Vector3(seed, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
+        Instantiate(target, new Vector3(seed, 1.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
     }
 
     private void SpawnSpecial(GameObject target, float posZ)
