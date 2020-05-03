@@ -10,16 +10,18 @@ public class StartWindow : MonoBehaviour
     public BannerView bannerViewBottom, bannerViewTop;
     public GameObject mainUIwindow;
 
+    private string appID;
+    
     private void Start()
     {
         Debug.Log("Start");
-        string appID = "ca-app-pub-3940256099942544~3347511713";
+        appID = "ca-app-pub-3940256099942544~3347511713";
 #if UNITY_IOS && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055~8077951056"
+        appID = "ca-app-pub-7199806318674055~8077951056";
         MobileAds.Initialize(appID);
         RequestBanner();
 #elif UNITY_ANDROID && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055~8883766267"
+        appID = "ca-app-pub-7199806318674055~8883766267";
         MobileAds.Initialize(appID);
         RequestBanner();
 #endif
@@ -33,9 +35,9 @@ public class StartWindow : MonoBehaviour
         // 広告ユニットID これはテスト用
         string adUnitId = "ca-app-pub-3940256099942544/6300978111";
 #if UNITY_IOS && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055/1512542708"
+        appID = "ca-app-pub-7199806318674055/1512542708";
 #elif UNITY_ANDROID && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055/7120378010"
+        appID = "ca-app-pub-7199806318674055/7120378010";
 #endif
         // Create a 320x50 banner at the top of the screen.
         bannerViewBottom = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
@@ -53,9 +55,9 @@ public class StartWindow : MonoBehaviour
         // 広告ユニットID これはテスト用
         string adUnitId = "ca-app-pub-3940256099942544/6300978111";
 #if UNITY_IOS && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055/1512542708"
+        appID = "ca-app-pub-7199806318674055/1512542708";
 #elif UNITY_ANDROID && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055/7120378010"
+        appID = "ca-app-pub-7199806318674055/7120378010";
 #endif
         // Create a 320x50 banner at the top of the screen.
         bannerViewTop = new BannerView(adUnitId, AdSize.Banner, AdPosition.Top);
