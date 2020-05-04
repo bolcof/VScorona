@@ -72,6 +72,37 @@ public class ObjectMaker : MonoBehaviour
             NoShopLog++;
         }
 
+        if (PlayerObj.GetComponent<PlayerBehaviour>().DishType != global::Shop.DISHTYPE.NONE)
+        {
+            if (NoMuchCustomerLog >= 6)
+            {
+                SpawnCustomer(Customer[PlayerObj.GetComponent<PlayerBehaviour>().DishType.GetHashCode() - 1], posZ);
+                NoMuchCustomerLog = 0;
+            }
+            else
+            {
+                int seeds = Random.Range(0, 7);
+                if (seeds <= 3)
+                {
+                    GameObject choose = Customer[seeds];
+                    SpawnCustomer(choose, posZ);
+
+                    if (choose.GetComponent<Customer>().DishType == PlayerObj.GetComponent<PlayerBehaviour>().DishType)
+                    {
+                        NoMuchCustomerLog = 0;
+                    }
+                    else
+                    {
+                        NoMuchCustomerLog++;
+                    }
+                }
+                else
+                {
+                    NoMuchCustomerLog++;
+                }
+            }
+        }
+
     }
 
     private bool[] Combination (int size, int trueNum)
@@ -102,18 +133,20 @@ public class ObjectMaker : MonoBehaviour
 
     private void SpawnShop(GameObject target, float posZ)
     {
-        float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 4.25f : -4.25f;
+        float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 1.0f : -1.0f;
         float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 11.0f : 4.0f;
 
-        Instantiate(target, new Vector3(seed, 1.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
+        GameObject tmp = Instantiate(target, new Vector3(seed * 4.25f, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
+        tmp.transform.localScale = new Vector3(seed, 1.0f, 1.0f);
     }
 
     private void SpawnCustomer(GameObject target, float posZ)
     {
-        float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 4.25f : -4.25f;
+        float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 1.0f : -1.0f;
         float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 7.0f : 14.0f;
 
-        Instantiate(target, new Vector3(seed, 1.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
+        GameObject tmp = Instantiate(target, new Vector3(seed * 4.25f, 1.8f, posZ + diff), Quaternion.identity, ObjRoot.transform);
+        tmp.transform.localScale = new Vector3(seed, 1.0f, 1.0f);
     }
 
     private void SpawnSpecial(GameObject target, float posZ)

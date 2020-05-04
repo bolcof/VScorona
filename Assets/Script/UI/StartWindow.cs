@@ -77,7 +77,7 @@ public class StartWindow : MonoBehaviour
 #endif
 
         Player.isPlaying = true;
-        Player.speed = 14.0f;
+        Player.speed = 20.03f;
 
         Player.PlayTime = 0.0f;
         

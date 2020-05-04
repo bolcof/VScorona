@@ -62,7 +62,7 @@ public class PlayerBehaviour : MonoBehaviour
             PlayTime += Time.deltaTime;
             if (PlayTime > 10.0f)
             {
-                speed += 3.5f;
+                speed += 2.05f;
                 PlayTime = 0.0f;
             }
 
@@ -126,26 +126,30 @@ public class PlayerBehaviour : MonoBehaviour
                 break;
 
             case "Shop":
-                Debug.Log(other.GetComponent<Shop>().DishType);
-                if (DishType == Shop.DISHTYPE.NONE)
+                if (isPlaying)
                 {
-                    DishType = other.GetComponent<Shop>().DishType;
-                    Dish.sprite = dishes[DishType.GetHashCode()];
-                    nowDelivering.enabled = true;
+                    Debug.Log("Shop_" + other.GetComponent<Shop>().DishType);
+                    if (DishType == Shop.DISHTYPE.NONE)
+                    {
+                        DishType = other.GetComponent<Shop>().DishType;
+                        Dish.sprite = dishes[DishType.GetHashCode()];
+                        nowDelivering.enabled = true;
+                    }
                 }
-
                 break;
 
             case "Customer":
-                if (DishType == other.GetComponent<Customer>().DishType)
+                if (isPlaying)
                 {
-                    nowDelivering.enabled = false;
+                    Debug.Log("Customer_" + other.GetComponent<Customer>().DishType);
+                    if (DishType == other.GetComponent<Customer>().DishType)
+                    {
+                        Debug.Log("配達成功");
+                        nowDelivering.enabled = false;
+                        DishType = Shop.DISHTYPE.NONE;
+                        Dish.sprite = dishes[0];
+                    }
                 }
-                else
-                {
-
-                }
-
                 break;
         }
     }
@@ -155,5 +159,6 @@ public class PlayerBehaviour : MonoBehaviour
         ResultPanel.GetComponent<Animator>().SetBool("Open", true);
         MainUI.GetComponent<Animator>().SetBool("Open", false);
         StartPanel.GetComponent<StartWindow>().goResult();
+        this.gameObject.GetComponent<Rigidbody>().drag = 0.5f;
     }
 }

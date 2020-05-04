@@ -33,7 +33,7 @@ public class GameState : MonoBehaviour
         {
             nextLevel += LevelUpLib[Level];
             Level++;
-            Player.speed += 2.5f;
+            Player.speed += 0.8f;
         }
 
     }
