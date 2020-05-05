@@ -11,7 +11,7 @@ public class EnemyRotate : MonoBehaviour
     {
         d = Random.Range(0.0f, 2.0f);
         vel = new Vector3(Random.Range(-60.0f, 60.0f), Random.Range(-60.0f, 60.0f), Random.Range(-60.0f, 60.0f));
-        this.transform.localPosition = vel;
+        this.transform.localRotation = Quaternion.Euler(vel);
     }
 
     void Update()
