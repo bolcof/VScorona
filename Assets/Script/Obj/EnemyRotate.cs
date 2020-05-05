@@ -16,7 +16,7 @@ public class EnemyRotate : MonoBehaviour
 
     void Update()
     {
-        // this.transform.Rotate(vel * Time.deltaTime);
+        this.transform.Rotate(vel * Time.deltaTime);
         this.transform.localPosition = new Vector3(this.transform.localPosition.x, Mathf.Sin(d * Mathf.PI) * 0.35f, this.transform.localPosition.z);
         d += Time.deltaTime;
     }
