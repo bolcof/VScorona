@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3137255}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.11764706}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3312,9 +3312,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d906a28ab6c098479bd9ded23b87314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 0
+  Level: 1
   MissionCleared: 0
   EarnedMoney: 0
+  ResultMonay: {fileID: 562984907}
+  ResultCleared: {fileID: 2111357756}
+  ResultRank: {fileID: 1373600856}
 --- !u!4 &1917756804
 Transform:
   m_ObjectHideFlags: 0

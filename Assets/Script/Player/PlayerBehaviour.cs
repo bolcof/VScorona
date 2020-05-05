@@ -40,6 +40,7 @@ public class PlayerBehaviour : MonoBehaviour
         PlayerRB = this.gameObject.GetComponent<Rigidbody>();
         ResultPanel = GameObject.Find("ResultPanel");
         Gstate = GameObject.Find("GameState").GetComponent<GameState>();
+        moneyText.text = "収入：0円";
     }
 
     // Update is called once per frame
@@ -148,6 +149,10 @@ public class PlayerBehaviour : MonoBehaviour
                         nowDelivering.enabled = false;
                         DishType = Shop.DISHTYPE.NONE;
                         Dish.sprite = dishes[0];
+
+                        Gstate.EarnedMoney += 500.0f;
+                        moneyText.text = "収入：" + Gstate.EarnedMoney.ToString("F0") + "円";
+                        Gstate.MissionClear();
                     }
                 }
                 break;
