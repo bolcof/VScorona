@@ -11,6 +11,10 @@ public class StartWindow : MonoBehaviour
     public GameObject mainUIwindow;
 
     private string appID;
+
+    private AudioSource AS;
+    public AudioClip dicide, cancel;
+    public AudioClip Mitsu, crap;
     
     private void Start()
     {
@@ -27,6 +31,8 @@ public class StartWindow : MonoBehaviour
 #endif
         Player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
         this.gameObject.GetComponent<Animator>().SetBool("Open", true);
+
+        AS = this.GetComponent<AudioSource>();
     }
 
     private void RequestBanner()
@@ -75,6 +81,7 @@ public class StartWindow : MonoBehaviour
         bannerViewBottom.Hide();
         RequestBanner_top();
 #endif
+        AS.PlayOneShot(dicide);
 
         Player.isPlaying = true;
         Player.speed = 20.03f;
@@ -83,10 +90,15 @@ public class StartWindow : MonoBehaviour
         
         this.gameObject.GetComponent<Animator>().SetBool("Open", false);
         mainUIwindow.GetComponent<Animator>().SetBool("Open", true);
+
+        Player.BGM.Play();
     }
 
     public void goResult()
     {
+        AS.PlayOneShot(Mitsu);
+        AS.clip = crap;
+        AS.PlayDelayed(1.6f);
 #if !UNITY_EDITOR
         bannerViewTop.Hide();
         RequestBanner();

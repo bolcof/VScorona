@@ -39,7 +39,6 @@ public class ObjectMaker : MonoBehaviour
     {
         if (PlayerObj.transform.position.z >= exPlayerObjPos + distance)
         {
-            Debug.Log("001");
             Spawn(exSpawnPos + distance, Gstate.Level);
             exSpawnPos += distance;
             exPlayerObjPos += distance;

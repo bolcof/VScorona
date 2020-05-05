@@ -20,6 +20,8 @@ public class GameState : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
+        ResultMonay.text = "収入：0円";
+        ResultCleared.text = "配達数：0件";
         ResultRank.text = "補助輪付き";
     }
 

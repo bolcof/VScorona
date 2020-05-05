@@ -32,6 +32,11 @@ public class PlayerBehaviour : MonoBehaviour
 
     public GameState Gstate;
 
+    public AudioSource AS, BGM;
+    public AudioClip[] ShopVoice = new AudioClip[2];
+    public AudioClip[] CustomerVoice = new AudioClip[2];
+    public AudioClip EnemyHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +55,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (!isPlaying)
         {
+            BGM.Stop();
             if (speed != 0)
             {
                 speed *= 0.9f;
@@ -109,42 +115,42 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch (other.tag)
+        if (isPlaying)
         {
-            case "Enemy":
-                Debug.Log("Enemy");
-                if (!Resist)
-                {
-                    Mask--;
-                    if (Mask == -1)
+            switch (other.tag)
+            {
+                case "Enemy":
+                    Debug.Log("Enemy");
+                    AS.PlayOneShot(EnemyHit);
+                    if (!Resist)
                     {
-                        Mask = 0;
-                        GameOver();
-                        isPlaying = false;
+                        Mask--;
+                        if (Mask == -1)
+                        {
+                            Mask = 0;
+                            GameOver();
+                            isPlaying = false;
+                        }
+                        maskText.text = Mask.ToString();
                     }
-                    maskText.text = Mask.ToString();
-                }
-                break;
+                    break;
 
-            case "Shop":
-                if (isPlaying)
-                {
+                case "Shop":
                     Debug.Log("Shop_" + other.GetComponent<Shop>().DishType);
                     if (DishType == Shop.DISHTYPE.NONE)
                     {
+                        AS.PlayOneShot(ShopVoice[Random.Range(0, 2)]);
                         DishType = other.GetComponent<Shop>().DishType;
                         Dish.sprite = dishes[DishType.GetHashCode()];
                         nowDelivering.enabled = true;
                     }
-                }
-                break;
+                    break;
 
-            case "Customer":
-                if (isPlaying)
-                {
+                case "Customer":
                     Debug.Log("Customer_" + other.GetComponent<Customer>().DishType);
                     if (DishType == other.GetComponent<Customer>().DishType)
                     {
+                        AS.PlayOneShot(CustomerVoice[Random.Range(0, 2)]);
                         Debug.Log("配達成功");
                         nowDelivering.enabled = false;
                         DishType = Shop.DISHTYPE.NONE;
@@ -154,8 +160,8 @@ public class PlayerBehaviour : MonoBehaviour
                         moneyText.text = "収入：" + Gstate.EarnedMoney.ToString("F0") + "円";
                         Gstate.MissionClear();
                     }
-                }
-                break;
+                    break;
+            }
         }
     }
 

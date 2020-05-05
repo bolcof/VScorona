@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3194657574945697372}
   - component: {fileID: 6313818358107229646}
   - component: {fileID: 751966709735154953}
-  - component: {fileID: 8968823439462516233}
   m_Layer: 0
   m_Name: Icosphere
   m_TagString: Enemy
@@ -27,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036674908999216257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 42, y: 42, z: 42}
   m_Children: []
   m_Father: {fileID: 3900000854639190717}
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8968823439462516233
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036674908999216257}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0142
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3792710701293840563
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +91,8 @@ GameObject:
   - component: {fileID: 1993677748112027695}
   - component: {fileID: 2212582253815994999}
   - component: {fileID: 5677627397000562401}
+  - component: {fileID: -2083669085331277368}
+  - component: {fileID: 3563453367754733019}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -182,11 +170,36 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3792710701293840563}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &-2083669085331277368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3792710701293840563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76136e09957b31b44a937f42bc7a44c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &3563453367754733019
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3792710701293840563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.63
+  m_Center: {x: 0, y: 0, z: 0}
