@@ -145,7 +145,7 @@ public class ObjectMaker : MonoBehaviour
         float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 1.0f : -1.0f;
         float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 7.0f : 14.0f;
 
-        GameObject tmp = Instantiate(target, new Vector3(seed * 4.25f, 1.8f, posZ + diff), Quaternion.identity, ObjRoot.transform);
+        GameObject tmp = Instantiate(target, new Vector3(seed * 4.25f, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
         tmp.transform.localScale = new Vector3(seed, 1.0f, 1.0f);
     }
 

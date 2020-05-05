@@ -20,7 +20,7 @@ public class GameState : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
-        ResultRank.text = "補助輪付き配達人";
+        ResultRank.text = "補助輪付き";
     }
 
     // Update is called once per frame
