@@ -163,11 +163,12 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    iPhone: com.butterflyeffect.amabieeats
+    Android: com.butterflyeffect.amabieeats
+    iPhone: com.butterflyeffect.amabie-eats
   buildNumber:
     iPhone: 2
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 19
+  AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
