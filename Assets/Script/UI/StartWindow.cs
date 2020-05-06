@@ -18,8 +18,9 @@ public class StartWindow : MonoBehaviour
     
     private void Start()
     {
-        Debug.Log("Start");
-        appID = "ca-app-pub-3940256099942544~3347511713";
+        if (PlayerPrefs.GetInt("noAds", 0) == 0)
+        {
+            appID = "ca-app-pub-3940256099942544~3347511713";
 #if UNITY_IOS && !UNITY_EDITOR
         appID = "ca-app-pub-7199806318674055~8077951056";
         MobileAds.Initialize(appID);
@@ -29,6 +30,7 @@ public class StartWindow : MonoBehaviour
         MobileAds.Initialize(appID);
         RequestBanner();
 #endif
+        }
         Player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
         this.gameObject.GetComponent<Animator>().SetBool("Open", true);
 
@@ -37,13 +39,13 @@ public class StartWindow : MonoBehaviour
 
     private void RequestBanner()
     {
-
+        string adUnitId;
         // 広告ユニットID これはテスト用
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
+        adUnitId = "ca-app-pub-3940256099942544/6300978111";
 #if UNITY_IOS && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055/1512542708";
+        adUnitId = "ca-app-pub-7199806318674055/1512542708";
 #elif UNITY_ANDROID && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055/7120378010";
+        adUnitId = "ca-app-pub-7199806318674055/7120378010";
 #endif
         // Create a 320x50 banner at the top of the screen.
         bannerViewBottom = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
@@ -61,9 +63,9 @@ public class StartWindow : MonoBehaviour
         // 広告ユニットID これはテスト用
         string adUnitId = "ca-app-pub-3940256099942544/6300978111";
 #if UNITY_IOS && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055/1512542708";
+        adUnitId = "ca-app-pub-7199806318674055/1512542708";
 #elif UNITY_ANDROID && !UNITY_EDITOR
-        appID = "ca-app-pub-7199806318674055/7120378010";
+        adUnitId = "ca-app-pub-7199806318674055/7120378010";
 #endif
         // Create a 320x50 banner at the top of the screen.
         bannerViewTop = new BannerView(adUnitId, AdSize.Banner, AdPosition.Top);
@@ -77,10 +79,14 @@ public class StartWindow : MonoBehaviour
 
     public void pushStart()
     {
+        if (PlayerPrefs.GetInt("noAds", 0) == 0)
+        {
 #if !UNITY_EDITOR
         bannerViewBottom.Hide();
         RequestBanner_top();
 #endif
+        }
+
         AS.PlayOneShot(dicide);
 
         Player.isPlaying = true;
@@ -99,10 +105,15 @@ public class StartWindow : MonoBehaviour
         AS.PlayOneShot(Mitsu);
         AS.clip = crap;
         AS.PlayDelayed(1.6f);
+
+
+        if (PlayerPrefs.GetInt("noAds", 0) == 0)
+        {
 #if !UNITY_EDITOR
         bannerViewTop.Hide();
         RequestBanner();
 #endif
+        }
     }
 
     public void HideAll()

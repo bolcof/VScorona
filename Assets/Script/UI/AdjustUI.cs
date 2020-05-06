@@ -16,15 +16,6 @@ public class AdjustUI : MonoBehaviour
         {
 
         }
-
-        if(PlayerPrefs.GetInt("noAds", 0) == 0)
-        {
-            UIroot.offsetMax = new Vector2(0.0f, Screen.height * 235.0f / 1080.0f);
-        }
-        else
-        {
-            UIroot.offsetMax = new Vector2(0.0f, 0.0f);
-        }
     }
 
     // Update is called once per frame

@@ -400,7 +400,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283251810}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -2239,13 +2239,14 @@ GameObject:
   - component: {fileID: 1314840473}
   - component: {fileID: 1314840475}
   - component: {fileID: 1314840474}
+  - component: {fileID: 1314840476}
   m_Layer: 5
-  m_Name: ReactionText
+  m_Name: Speedy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1314840473
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2262,8 +2263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 226}
-  m_SizeDelta: {x: 640, y: 150}
+  m_AnchoredPosition: {x: -143, y: 469}
+  m_SizeDelta: {x: 280, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314840474
 MonoBehaviour:
@@ -2278,15 +2279,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9372549, g: 0.9092157, b: 0.37647057, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 252d5b16290f9444392683622d5d80b6, type: 3}
     m_FontSize: 120
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 120
@@ -2296,7 +2297,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SUCCESS!
+  m_Text: "\u901F\u9054\uFF01"
 --- !u!222 &1314840475
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2305,6 +2306,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314840472}
   m_CullTransparentMesh: 0
+--- !u!95 &1314840476
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314840472}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df3c1e69c44fa064c854ad2662e9dbea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1372106853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2910,7 +2930,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785025425}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -3305,7 +3325,7 @@ GameObject:
   - component: {fileID: 1927777509}
   - component: {fileID: 1927777508}
   m_Layer: 5
-  m_Name: Image
+  m_Name: logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3320,7 +3340,7 @@ RectTransform:
   m_GameObject: {fileID: 1927777506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 438019868}
   m_RootOrder: 1
@@ -4020,7 +4040,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7727ded14cb38b44f933184479d6ed77, type: 3}
   CustomerVoice:
   - {fileID: 8300000, guid: 58b8b99dfae9e5c4c9f1c9287bf046c5, type: 3}
-  - {fileID: 8300000, guid: 0fc399abe37b1e54e934d2925888c8d7, type: 3}
+  - {fileID: 8300000, guid: d08a43039e09b504db1a25707b398538, type: 3}
   EnemyHit: {fileID: 8300000, guid: 08e09036e1fc69f4eaf055009518b008, type: 3}
 --- !u!54 &2118687898
 Rigidbody:
@@ -4146,7 +4166,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d160abcf8dc72e0469e1de9fd13c2035, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0

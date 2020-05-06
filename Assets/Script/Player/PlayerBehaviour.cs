@@ -15,13 +15,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     public int Mask;
     public bool Resist;
-
-    //テキストではなくす
+    
     public Text maskText;
 
     public Image Dish;
     public Sprite[] dishes = new Sprite[5];
     public Image nowDelivering;
+    public GameObject Speedy;
+    private float DeliveryTime = 0.0f;
 
     public Text speedText, moneyText;
 
@@ -35,6 +36,7 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioSource AS, BGM;
     public AudioClip[] ShopVoice = new AudioClip[2];
     public AudioClip[] CustomerVoice = new AudioClip[2];
+    public AudioClip SpeedyAudio;
     public AudioClip EnemyHit;
 
     // Start is called before the first frame update
@@ -67,7 +69,7 @@ public class PlayerBehaviour : MonoBehaviour
             posX = (Input.mousePosition.x - Screen.width / 2) / (Screen.width / 2) * 5.4f;
 
             PlayTime += Time.deltaTime;
-            if (PlayTime > 10.0f)
+            if (PlayTime > 12.0f)
             {
                 speed += 2.05f;
                 PlayTime = 0.0f;
@@ -95,13 +97,13 @@ public class PlayerBehaviour : MonoBehaviour
             rotY *= 0.9f;
         }
 
-        if (rotY >= 15.0f)
+        if (rotY >= 20.0f)
         {
-            rotY = 15.0f;
+            rotY = 20.0f;
         }
-        else if(rotY <= -15.0f)
+        else if(rotY <= -20.0f)
         {
-            rotY = -15.0f;
+            rotY = -20.0f;
         }
 
         exPosX = posX;
@@ -111,6 +113,11 @@ public class PlayerBehaviour : MonoBehaviour
             PlayerRB.AddForce(0.0f, 0.0f, speed * 0.6f);
         }
         this.gameObject.transform.rotation = Quaternion.Euler(0.0f, rotY, 0.0f);
+
+        if(DishType != Shop.DISHTYPE.NONE)
+        {
+            DeliveryTime += Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -143,6 +150,7 @@ public class PlayerBehaviour : MonoBehaviour
                         DishType = other.GetComponent<Shop>().DishType;
                         Dish.sprite = dishes[DishType.GetHashCode()];
                         nowDelivering.enabled = true;
+
                     }
                     break;
 
@@ -150,6 +158,22 @@ public class PlayerBehaviour : MonoBehaviour
                     Debug.Log("Customer_" + other.GetComponent<Customer>().DishType);
                     if (DishType == other.GetComponent<Customer>().DishType)
                     {
+                        if(DeliveryTime <= 3.0f)
+                        {
+                            Speedy.GetComponent<Animator>().SetBool("Speedy", true);
+                            Speedy.GetComponent<Text>().text = "超速達！";
+                            Gstate.EarnedMoney += 200.0f;
+                            AS.PlayOneShot(SpeedyAudio);
+                        }
+                        else if(DeliveryTime <= 6.0f)
+                        {
+                            Speedy.GetComponent<Animator>().SetBool("Speedy", true);
+                            Speedy.GetComponent<Text>().text = "速達！";
+                            Gstate.EarnedMoney += 100.0f;
+                            AS.PlayOneShot(SpeedyAudio);
+                        }
+                        DeliveryTime = 0.0f;
+
                         AS.PlayOneShot(CustomerVoice[Random.Range(0, 2)]);
                         Debug.Log("配達成功");
                         nowDelivering.enabled = false;
