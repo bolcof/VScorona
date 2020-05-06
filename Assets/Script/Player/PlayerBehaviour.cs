@@ -89,7 +89,8 @@ public class PlayerBehaviour : MonoBehaviour
             this.gameObject.transform.position = new Vector3(posX, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
         }
 
-        if (Mathf.Abs(rotY) <= 0.2f){
+        if (Mathf.Abs(rotY) <= 0.2f)
+        {
             rotY = 0;
         }
         else
@@ -101,7 +102,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             rotY = 20.0f;
         }
-        else if(rotY <= -20.0f)
+        else if (rotY <= -20.0f)
         {
             rotY = -20.0f;
         }
@@ -114,7 +115,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         this.gameObject.transform.rotation = Quaternion.Euler(0.0f, rotY, 0.0f);
 
-        if(DishType != Shop.DISHTYPE.NONE)
+        if (DishType != Shop.DISHTYPE.NONE)
         {
             DeliveryTime += Time.deltaTime;
         }
@@ -187,6 +188,11 @@ public class PlayerBehaviour : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void FadeEnd() {
+        Debug.Log("こう?");
+        Speedy.GetComponent<Animator>().SetBool("Speedy", false);
     }
 
     private void GameOver()

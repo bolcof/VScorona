@@ -2240,6 +2240,7 @@ GameObject:
   - component: {fileID: 1314840475}
   - component: {fileID: 1314840474}
   - component: {fileID: 1314840476}
+  - component: {fileID: 1314840477}
   m_Layer: 5
   m_Name: Speedy
   m_TagString: Untagged
@@ -2325,6 +2326,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1314840477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314840472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cd19e97e3ad43769bf9ef197efca1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1372106853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,6 +4040,7 @@ MonoBehaviour:
   - {fileID: 1298414854573393902, guid: 2b1d763686b5fe641848a26d5b500ee5, type: 3}
   - {fileID: -5884737247973293422, guid: 2b1d763686b5fe641848a26d5b500ee5, type: 3}
   nowDelivering: {fileID: 579739242}
+  Speedy: {fileID: 1314840472}
   speedText: {fileID: 1835094188}
   moneyText: {fileID: 617300181}
   StartPanel: {fileID: 438019867}
@@ -4041,6 +4055,7 @@ MonoBehaviour:
   CustomerVoice:
   - {fileID: 8300000, guid: 58b8b99dfae9e5c4c9f1c9287bf046c5, type: 3}
   - {fileID: 8300000, guid: d08a43039e09b504db1a25707b398538, type: 3}
+  SpeedyAudio: {fileID: 8300000, guid: 0fc399abe37b1e54e934d2925888c8d7, type: 3}
   EnemyHit: {fileID: 8300000, guid: 08e09036e1fc69f4eaf055009518b008, type: 3}
 --- !u!54 &2118687898
 Rigidbody:
