@@ -1,67 +1,85 @@
 fileFormatVersion: 2
-guid: 2b1d763686b5fe641848a26d5b500ee5
+guid: 0a582a8af68923f43b5cb95e2c14a8e9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3780645647652979540
-    second: logo
+      213: -7562867634548739004
+    second: Logo
   - first:
-      213: 7967770198151286775
-    second: resultback
+      213: -2977212209936673783
+    second: Receipt
   - first:
-      213: -5693893504603536812
-    second: start
+      213: 5094264567888021138
+    second: NoAds
   - first:
-      213: -973888977638342560
-    second: restart
+      213: 761706420461466987
+    second: MuteOn
   - first:
-      213: 7263325702489587547
-    second: option
+      213: 7540584230799209046
+    second: MuteOff
   - first:
-      213: 3823134448475679951
-    second: UI_01_5
+      213: 1451025456509243824
+    second: Start
   - first:
-      213: 3682773214701263832
-    second: UI_01_6
+      213: 9183579314172175505
+    second: Restart
   - first:
-      213: -7341887426666498254
-    second: UI_01_7
+      213: -7797770249174657987
+    second: OptionBack
   - first:
-      213: 2469766421676437581
-    second: UI_01_8
+      213: -5172798903270527596
+    second: Option
   - first:
-      213: -6663754542756269902
+      213: 3296752725742314861
+    second: UI_02_9
+  - first:
+      213: 6307027172441713065
+    second: UI_02_10
+  - first:
+      213: 4337035152392564846
+    second: UI_02_11
+  - first:
+      213: -8689384951721025331
+    second: UI_02_12
+  - first:
+      213: 6177297781394587126
     second: Now
   - first:
-      213: -6196442220021662591
+      213: 5331130472709884195
     second: Green
   - first:
-      213: -7091740869005248518
-    second: orange
+      213: -8547829281559968865
+    second: Orange
   - first:
-      213: 411231800463678152
-    second: UI_01_12
+      213: -7009891238217381843
+    second: UI_02_16
   - first:
-      213: -7085229149205675843
-    second: share
+      213: 7524709576351293778
+    second: HowTo
   - first:
-      213: 2666580183611255035
-    second: howto
+      213: -1635470529786283204
+    second: Mask
   - first:
-      213: 5751168834494986410
-    second: mask
+      213: -4259830225761669341
+    second: Share
   - first:
-      213: 1298414854573393902
-    second: hum
+      213: -3282556244630225896
+    second: Humberger
   - first:
-      213: -3605872766991222159
-    second: pizza
+      213: -5371942486851398637
+    second: Pizza
   - first:
-      213: 4179824587198283991
-    second: sushi
+      213: -3577596659479456692
+    second: Sushi
   - first:
-      213: -5884737247973293422
-    second: ramen
+      213: -4978240636488052042
+    second: Ramen
+  - first:
+      213: 6914139666713410182
+    second: None
+  - first:
+      213: -4284196516385781795
+    second: Logo_image
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -171,13 +189,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: logo
+      name: Logo
       rect:
         serializedVersion: 2
-        x: 7
-        y: 1439
-        width: 597
-        height: 603
+        x: 34
+        y: 1482
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cac740e60d2788bc0800000000000000
-      internalID: -3780645647652979540
+      spriteID: 4447c67c4fb4b0790800000000000000
+      internalID: -7562867634548739004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: resultback
+      name: Receipt
       rect:
         serializedVersion: 2
-        x: 614
-        y: 1367
-        width: 607
-        height: 681
+        x: 606
+        y: 1347
+        width: 608
+        height: 682
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,14 +224,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ff40c8b7c4339e60800000000000000
-      internalID: 7967770198151286775
+      spriteID: 904d4cdd441dea6d0800000000000000
+      internalID: -2977212209936673783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: start
+      name: NoAds
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 1856
+        width: 520
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29603d842a672b640800000000000000
+      internalID: 5094264567888021138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MuteOn
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 1691
+        width: 520
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b657db624ff129a00800000000000000
+      internalID: 761706420461466987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MuteOff
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 1528
+        width: 520
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652f2bbf76985a860800000000000000
+      internalID: 7540584230799209046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Start
       rect:
         serializedVersion: 2
         x: 10
@@ -227,20 +308,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 452c33d660a3bf0b0800000000000000
-      internalID: -5693893504603536812
+      spriteID: 0b1584ff6f3132410800000000000000
+      internalID: 1451025456509243824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: restart
+      name: Restart
       rect:
         serializedVersion: 2
         x: 613
-        y: 1219
-        width: 518
-        height: 137
+        y: 1200
+        width: 514
+        height: 138
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,14 +329,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 060c23d722d0c72f0800000000000000
-      internalID: -973888977638342560
+      spriteID: 194abd3cab0a27f70800000000000000
+      internalID: 9183579314172175505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: option
+      name: OptionBack
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 723
+        width: 647
+        height: 647
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d34d5d1d541c8c390800000000000000
+      internalID: -7797770249174657987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Option
       rect:
         serializedVersion: 2
         x: 9
@@ -269,8 +371,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5f3bd06e348cc460800000000000000
-      internalID: 7263325702489587547
+      spriteID: 49da70cddc68638b0800000000000000
+      internalID: -5172798903270527596
       vertices: []
       indices: 
       edges: []
@@ -290,8 +392,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b0fd98ac869583a0800000000000000
-      internalID: -6663754542756269902
+      spriteID: 6fd35db7a9b2ab550800000000000000
+      internalID: 6177297781394587126
       vertices: []
       indices: 
       edges: []
@@ -300,7 +402,7 @@ TextureImporter:
       name: Green
       rect:
         serializedVersion: 2
-        x: 446
+        x: 445
         y: 1199
         width: 41
         height: 55
@@ -311,14 +413,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18c306c81a0d10aa0800000000000000
-      internalID: -6196442220021662591
+      spriteID: 329022d5beafbf940800000000000000
+      internalID: 5331130472709884195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange
+      name: Orange
       rect:
         serializedVersion: 2
         x: 501
@@ -332,35 +434,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af772d7d043159d90800000000000000
-      internalID: -7091740869005248518
+      spriteID: f938fe78e82006980800000000000000
+      internalID: -8547829281559968865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: share
-      rect:
-        serializedVersion: 2
-        x: 611
-        y: 1070
-        width: 521
-        height: 142
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db04a51c0a53cad90800000000000000
-      internalID: -7085229149205675843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: howto
+      name: HowTo
       rect:
         serializedVersion: 2
         x: 9
@@ -374,14 +455,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf8ae318c88910520800000000000000
-      internalID: 2666580183611255035
+      spriteID: 2512668fd732d6860800000000000000
+      internalID: 7524709576351293778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mask
+      name: Mask
       rect:
         serializedVersion: 2
         x: 279
@@ -395,14 +476,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa8fe5f759140df40800000000000000
-      internalID: 5751168834494986410
+      spriteID: c3bf77fd734ad49e0800000000000000
+      internalID: -1635470529786283204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hum
+      name: Share
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1042
+        width: 520
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32fe00eaafa02e4c0800000000000000
+      internalID: -4259830225761669341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humberger
       rect:
         serializedVersion: 2
         x: 10
@@ -416,14 +518,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee700f15e65e40210800000000000000
-      internalID: 1298414854573393902
+      spriteID: 81c339bbc740272d0800000000000000
+      internalID: -3282556244630225896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pizza
+      name: Pizza
       rect:
         serializedVersion: 2
         x: 199
@@ -437,14 +539,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17abb3ab2dd55fdc0800000000000000
-      internalID: -3605872766991222159
+      spriteID: 314d46d15c60375b0800000000000000
+      internalID: -5371942486851398637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sushi
+      name: Sushi
       rect:
         serializedVersion: 2
         x: 387
@@ -458,14 +560,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d0c56ff058b10a30800000000000000
-      internalID: 4179824587198283991
+      spriteID: c445a1a0bc2d95ec0800000000000000
+      internalID: -3577596659479456692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ramen
+      name: Ramen
       rect:
         serializedVersion: 2
         x: 576
@@ -479,8 +581,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 292ca02d6a6355ea0800000000000000
-      internalID: -5884737247973293422
+      spriteID: 6b217b7548cb9eab0800000000000000
+      internalID: -4978240636488052042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: None
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 803
+        width: 180
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68af3e9e465f3ff50800000000000000
+      internalID: 6914139666713410182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Logo_image
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 143
+        width: 598
+        height: 599
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd70cdc87f97b84c0800000000000000
+      internalID: -4284196516385781795
       vertices: []
       indices: 
       edges: []
@@ -488,7 +632,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fa2bc8b396a971642bb7fe698db30133
+    spriteID: 1fed90ff9777a844d9f40d2cddb51254
     internalID: 0
     vertices: []
     indices: 
