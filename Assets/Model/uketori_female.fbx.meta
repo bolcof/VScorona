@@ -3,7 +3,62 @@ guid: 68fbd604b6eb8ce40ac2083215707c9e
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 1da277f2b34881d44bbc3a0cbcb43a92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 6a2f4db6257b2034e9341a87b2a4ed17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Uketori_female_Eyebrow001_Eyebrow001
+    second: {fileID: 2100000, guid: 9dfc5b963fb59714eb66d76e5fe10f9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Uketori_female_Eyelashes03_Bodymaterial
+    second: {fileID: 2100000, guid: 71ce46d2643779546917268c6b7512da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Uketori_female_Female1605_Old_caucasian_male_detailed
+    second: {fileID: 2100000, guid: 3891a107912d33a49a7033adb7769e1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Uketori_female_Female_casualsuit02_Female_casualsuit02
+    second: {fileID: 2100000, guid: 5f780f7847ad08b4da5cf845b38d5400, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Uketori_female_Low-poly_Eye_brown
+    second: {fileID: 2100000, guid: dfa0a461e7ceb2f4facd9a37693581c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Uketori_female_Ponytail01_Ponytail01
+    second: {fileID: 2100000, guid: 3a6d2a20fb3943847a6e33986657e16c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Uketori_female_Shoes02_Shoes02
+    second: {fileID: 2100000, guid: f373a4d2858dcd549976b5932d6790d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Uketori_female_Shoes05_Shoes05
+    second: {fileID: 2100000, guid: 89af0395eb88c2b49a84596f374b48c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kutu
+    second: {fileID: 2100000, guid: 014b22ad48517e848a98bba2f9b082d3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
