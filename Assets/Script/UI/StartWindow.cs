@@ -33,10 +33,19 @@ public class StartWindow : MonoBehaviour
 #endif
         }
         Player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
-        this.gameObject.GetComponent<Animator>().SetBool("Open", true);
+
+        if(PlayerPrefs.GetInt("FirstBoot", 0) == 0)
+        {
+            this.gameObject.GetComponent<Animator>().SetBool("Open", false);
+            HowtoPanel.GetComponent<Animator>().SetBool("Open", true);
+        }
+        else
+        {
+            this.gameObject.GetComponent<Animator>().SetBool("Open", true);
+            HowtoPanel.GetComponent<Animator>().SetBool("Open", false);
+        }
 
         OptionPanel.GetComponent<Animator>().SetBool("Open", false);
-        HowtoPanel.GetComponent<Animator>().SetBool("Open", false);
         mainUIwindow.GetComponent<Animator>().SetBool("Open", false);
 
         AS = this.GetComponent<AudioSource>();

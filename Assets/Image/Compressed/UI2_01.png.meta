@@ -10,7 +10,7 @@ TextureImporter:
     second: MuteOFF
   - first:
       213: 7648835475176814008
-    second: Allow
+    second: Arrow
   - first:
       213: 8818151042471170823
     second: Mask
@@ -171,11 +171,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Allow
+      name: Arrow
       rect:
         serializedVersion: 2
         x: 13
-        y: 479
+        y: 510
         width: 81
         height: 161
       alignment: 0

@@ -38,6 +38,7 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip[] CustomerVoice = new AudioClip[2];
     public AudioClip SpeedyAudio;
     public AudioClip EnemyHit;
+    public AudioClip MaskSE, AmabieSE;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float nowTouchX = 0;
         float posX = 0;
 
         if (!isPlaying)
@@ -66,7 +68,8 @@ public class PlayerBehaviour : MonoBehaviour
         }
         else
         {
-            posX = (Input.mousePosition.x - Screen.width / 2) / (Screen.width / 2) * 5.4f;
+            nowTouchX = (Input.mousePosition.x - Screen.width / 2) / (Screen.width / 2) * 5.6f;
+            posX = exPosX + ((nowTouchX - exPosX) * 0.6f);
 
             PlayTime += Time.deltaTime;
             if (PlayTime > 12.0f)
@@ -201,12 +204,29 @@ public class PlayerBehaviour : MonoBehaviour
                         Gstate.MissionClear();
                     }
                     break;
+                case "Mask":
+                    Destroy(other.gameObject);
+                    Mask++;
+                    maskText.text = Mask.ToString();
+                    if (PlayerPrefs.GetInt("Mute", 0) == 0)
+                    {
+                        AS.PlayOneShot(MaskSE);
+                    }
+
+                    break;
+                case "Amabie":
+                    Destroy(other.gameObject);
+                    if (PlayerPrefs.GetInt("Mute", 0) == 0)
+                    {
+                        AS.PlayOneShot(AmabieSE);
+                    }
+
+                    break;
             }
         }
     }
 
     public void FadeEnd() {
-        Debug.Log("こう?");
         Speedy.GetComponent<Animator>().SetBool("Speedy", false);
     }
 

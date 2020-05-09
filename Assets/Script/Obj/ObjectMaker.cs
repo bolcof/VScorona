@@ -11,7 +11,7 @@ public class ObjectMaker : MonoBehaviour
 
     public GameObject Virus;
     public GameObject[] Shop, Customer;
-    public GameObject Amabie;
+    public GameObject Mask, Amabie;
 
     public GameObject[] UnitFrame = new GameObject[2];
     int[,] EnemyNumLib = { { 0, 0, 1, 1, 1, 2 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 2, 2, 2, 3 }, { 1, 2, 2, 3, 3, 3 }, { 2, 2, 3, 3, 3, 4 } };
@@ -20,6 +20,7 @@ public class ObjectMaker : MonoBehaviour
 
     private int NoShopLog = 0;
     private int NoMuchCustomerLog = 0;
+    private int NoSpecialLog = -20;
 
     public GameState Gstate;
 
@@ -47,6 +48,7 @@ public class ObjectMaker : MonoBehaviour
 
     public void Spawn(float posZ, int Level)
     {
+        //Virus
         GameObject Unit = Instantiate(UnitFrame[1], new Vector3(0.0f, 0.0f, posZ), Quaternion.identity, ObjRoot.transform);
 
         int EnemyNum = EnemyNumLib[Level, Random.Range(0, 6)];
@@ -61,6 +63,7 @@ public class ObjectMaker : MonoBehaviour
 
         }
 
+        //Shop
         float seed = Random.Range(0, 100.0f);
         if (seed <= NoShopLog * 2.5f + 3.0f)
         {
@@ -72,6 +75,7 @@ public class ObjectMaker : MonoBehaviour
             NoShopLog++;
         }
 
+        //Customer
         if (PlayerObj.GetComponent<PlayerBehaviour>().DishType != global::Shop.DISHTYPE.NONE)
         {
             if (NoMuchCustomerLog >= 6)
@@ -101,6 +105,27 @@ public class ObjectMaker : MonoBehaviour
                     NoMuchCustomerLog++;
                 }
             }
+        }
+
+        //Special
+        float SpecialSeed = Random.Range(0, 100.0f);
+        Debug.Log((NoSpecialLog * 0.5f - 13.5f).ToString());
+        if (SpecialSeed <= NoSpecialLog * 0.5f - 13.5f)
+        {
+            if(PlayerObj.GetComponent<PlayerBehaviour>().Mask < 2)
+            {
+                GameObject Spawned = Random.Range(0.0f, 1.2f) > 0.4f ? Mask : Amabie;
+                SpawnSpecial(Spawned, posZ + (distance / 2));
+            }
+            else
+            {
+                SpawnSpecial(Amabie, posZ + (distance / 2));
+            }
+            NoSpecialLog = -10;
+        }
+        else
+        {
+            NoSpecialLog += (3 - PlayerObj.GetComponent<PlayerBehaviour>().Mask);
         }
 
     }
@@ -151,8 +176,8 @@ public class ObjectMaker : MonoBehaviour
 
     private void SpawnSpecial(GameObject target, float posZ)
     {
-        float seed = Random.Range(-2.0f, 2.0f);
-        Instantiate(target, new Vector3(seed, 0.0f, posZ + 9.0f), Quaternion.identity, ObjRoot.transform);
+        float seed = Random.Range(-1.5f, 1.5f);
+        Instantiate(target, new Vector3(seed, 1.8f, posZ), Quaternion.identity, ObjRoot.transform);
     }
 
     public void GetDish(int id)
