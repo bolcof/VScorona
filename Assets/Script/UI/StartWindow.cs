@@ -9,10 +9,11 @@ public class StartWindow : MonoBehaviour
     private PlayerBehaviour Player;
     public BannerView bannerViewBottom, bannerViewTop;
     public GameObject mainUIwindow;
+    public GameObject OptionPanel, HowtoPanel;
 
     private string appID;
 
-    private AudioSource AS;
+    public AudioSource AS;
     public AudioClip dicide, cancel;
     public AudioClip Mitsu, crap;
     
@@ -33,6 +34,10 @@ public class StartWindow : MonoBehaviour
         }
         Player = GameObject.FindWithTag("Player").GetComponent<PlayerBehaviour>();
         this.gameObject.GetComponent<Animator>().SetBool("Open", true);
+
+        OptionPanel.GetComponent<Animator>().SetBool("Open", false);
+        HowtoPanel.GetComponent<Animator>().SetBool("Open", false);
+        mainUIwindow.GetComponent<Animator>().SetBool("Open", false);
 
         AS = this.GetComponent<AudioSource>();
     }
@@ -87,7 +92,10 @@ public class StartWindow : MonoBehaviour
 #endif
         }
 
-        AS.PlayOneShot(dicide);
+        if (PlayerPrefs.GetInt("Mute", 0) == 0)
+        {
+            AS.PlayOneShot(dicide);
+        }
 
         Player.isPlaying = true;
         Player.speed = 20.03f;
@@ -97,14 +105,34 @@ public class StartWindow : MonoBehaviour
         this.gameObject.GetComponent<Animator>().SetBool("Open", false);
         mainUIwindow.GetComponent<Animator>().SetBool("Open", true);
 
-        Player.BGM.Play();
+        if (PlayerPrefs.GetInt("Mute", 0) == 0)
+        {
+            Player.BGM.Play();
+        }
+    }
+
+    public void pushOption()
+    {
+        if (PlayerPrefs.GetInt("Mute", 0) == 0)
+        {
+            AS.PlayOneShot(dicide);
+        }
+
+        this.gameObject.GetComponent<Animator>().SetBool("Open", false);
+
+        OptionPanel.GetComponent<OptionWindow>().Opened();
+        OptionPanel.GetComponent<Animator>().SetBool("Open", true);
+
     }
 
     public void goResult()
     {
-        AS.PlayOneShot(Mitsu);
-        AS.clip = crap;
-        AS.PlayDelayed(1.6f);
+        if (PlayerPrefs.GetInt("Mute", 0) == 0)
+        {
+            AS.PlayOneShot(Mitsu);
+            AS.clip = crap;
+            AS.PlayDelayed(1.6f);
+        }
 
 
         if (PlayerPrefs.GetInt("noAds", 0) == 0)

@@ -129,7 +129,10 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 case "Enemy":
                     Debug.Log("Enemy");
-                    AS.PlayOneShot(EnemyHit);
+                    if (PlayerPrefs.GetInt("Mute", 0) == 0)
+                    {
+                        AS.PlayOneShot(EnemyHit);
+                    }
                     if (!Resist)
                     {
                         Mask--;
@@ -147,7 +150,10 @@ public class PlayerBehaviour : MonoBehaviour
                     Debug.Log("Shop_" + other.GetComponent<Shop>().DishType);
                     if (DishType == Shop.DISHTYPE.NONE)
                     {
-                        AS.PlayOneShot(ShopVoice[Random.Range(0, 2)]);
+                        if (PlayerPrefs.GetInt("Mute", 0) == 0)
+                        {
+                            AS.PlayOneShot(ShopVoice[Random.Range(0, 2)]);
+                        }
                         DishType = other.GetComponent<Shop>().DishType;
                         Dish.sprite = dishes[DishType.GetHashCode()];
                         nowDelivering.enabled = true;
@@ -164,18 +170,27 @@ public class PlayerBehaviour : MonoBehaviour
                             Speedy.GetComponent<Animator>().SetBool("Speedy", true);
                             Speedy.GetComponent<Text>().text = "超速達！";
                             Gstate.EarnedMoney += 200.0f;
-                            AS.PlayOneShot(SpeedyAudio);
+                            if (PlayerPrefs.GetInt("Mute", 0) == 0)
+                            {
+                                AS.PlayOneShot(SpeedyAudio);
+                            }
                         }
                         else if(DeliveryTime <= 6.0f)
                         {
                             Speedy.GetComponent<Animator>().SetBool("Speedy", true);
                             Speedy.GetComponent<Text>().text = "速達！";
                             Gstate.EarnedMoney += 100.0f;
-                            AS.PlayOneShot(SpeedyAudio);
+                            if (PlayerPrefs.GetInt("Mute", 0) == 0)
+                            {
+                                AS.PlayOneShot(SpeedyAudio);
+                            }
                         }
                         DeliveryTime = 0.0f;
 
-                        AS.PlayOneShot(CustomerVoice[Random.Range(0, 2)]);
+                        if (PlayerPrefs.GetInt("Mute", 0) == 0)
+                        {
+                            AS.PlayOneShot(CustomerVoice[Random.Range(0, 2)]);
+                        }
                         Debug.Log("配達成功");
                         nowDelivering.enabled = false;
                         DishType = Shop.DISHTYPE.NONE;
