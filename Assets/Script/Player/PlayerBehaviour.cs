@@ -69,7 +69,7 @@ public class PlayerBehaviour : MonoBehaviour
         else
         {
             nowTouchX = (Input.mousePosition.x - Screen.width / 2) / (Screen.width / 2) * 5.6f;
-            posX = exPosX + ((nowTouchX - exPosX) * 0.6f);
+            posX = exPosX + ((nowTouchX - exPosX) * 0.4f);
 
             PlayTime += Time.deltaTime;
             if (PlayTime > 12.0f)

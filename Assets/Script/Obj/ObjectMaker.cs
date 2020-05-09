@@ -110,7 +110,7 @@ public class ObjectMaker : MonoBehaviour
 
         //Special
         float SpecialSeed = Random.Range(0, 100.0f);
-        Debug.Log((NoSpecialLog * 0.5f - 13.5f).ToString());
+        //Debug.Log((NoSpecialLog * 0.5f - 13.5f).ToString());
         if (SpecialSeed <= NoSpecialLog * 0.5f - 13.5f)
         {
             if(PlayerObj.GetComponent<PlayerBehaviour>().Mask < 2)
