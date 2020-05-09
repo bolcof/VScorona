@@ -65,9 +65,10 @@ public class ObjectMaker : MonoBehaviour
 
         //Shop
         float seed = Random.Range(0, 100.0f);
+        float shopPosX = Random.Range(0.0f, 1.0f) > 0.5f ? 1.0f : -1.0f;
         if (seed <= NoShopLog * 2.5f + 3.0f)
         {
-            SpawnShop(Shop[Random.Range(0, Shop.Length)], posZ);
+            shopPosX = SpawnShop(Shop[Random.Range(0, Shop.Length)], posZ);
             NoShopLog = 0;
         }
         else
@@ -80,7 +81,7 @@ public class ObjectMaker : MonoBehaviour
         {
             if (NoMuchCustomerLog >= 6)
             {
-                SpawnCustomer(Customer[PlayerObj.GetComponent<PlayerBehaviour>().DishType.GetHashCode() - 1], posZ);
+                SpawnCustomer(Customer[PlayerObj.GetComponent<PlayerBehaviour>().DishType.GetHashCode() - 1], posZ, shopPosX);
                 NoMuchCustomerLog = 0;
             }
             else
@@ -89,7 +90,7 @@ public class ObjectMaker : MonoBehaviour
                 if (seeds <= 3)
                 {
                     GameObject choose = Customer[seeds];
-                    SpawnCustomer(choose, posZ);
+                    SpawnCustomer(choose, posZ, shopPosX);
 
                     if (choose.GetComponent<Customer>().DishType == PlayerObj.GetComponent<PlayerBehaviour>().DishType)
                     {
@@ -156,18 +157,20 @@ public class ObjectMaker : MonoBehaviour
         return tmp;
     }
 
-    private void SpawnShop(GameObject target, float posZ)
+    private float SpawnShop(GameObject target, float posZ)
     {
         float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 1.0f : -1.0f;
         float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 11.0f : 4.2f;
 
-        GameObject tmp = Instantiate(target, new Vector3(seed * 3.8f, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
+        GameObject tmp = Instantiate(target, new Vector3(seed * 3.9f, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
         tmp.transform.localScale = new Vector3(seed, 1.0f, 1.0f);
+
+        return seed;
     }
 
-    private void SpawnCustomer(GameObject target, float posZ)
+    private void SpawnCustomer(GameObject target, float posZ, float ShopSeed)
     {
-        float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 1.0f : -1.0f;
+        float seed = ShopSeed * -1;
         float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 7.0f : 13.8f;
 
         GameObject tmp = Instantiate(target, new Vector3(seed * 4.1f, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);

@@ -110,7 +110,9 @@ public class StartWindow : MonoBehaviour
         Player.speed = 20.03f;
 
         Player.PlayTime = 0.0f;
-        
+        Player.gameObject.GetComponent<Animator>().SetBool("Run", true);
+        Player.gameObject.GetComponent<Animator>().SetFloat("Speed", 1.0f);
+
         this.gameObject.GetComponent<Animator>().SetBool("Open", false);
         mainUIwindow.GetComponent<Animator>().SetBool("Open", true);
 

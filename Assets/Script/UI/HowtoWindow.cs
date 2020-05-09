@@ -14,6 +14,7 @@ public class HowtoWindow : MonoBehaviour
     {
         this.GetComponent<Animator>().SetBool("Open", false);
         StartWindow.GetComponent<Animator>().SetBool("Open", true);
+        PlayerPrefs.SetInt("FirstBoot", 1);
     }
 
     public void pushNext()

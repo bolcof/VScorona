@@ -76,6 +76,7 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 speed += 2.05f;
                 PlayTime = 0.0f;
+                this.gameObject.GetComponent<Animator>().SetFloat("Speed", speed * 0.05f);
             }
 
             if (posX > 5.0f)
@@ -232,6 +233,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void GameOver()
     {
+        this.GetComponent<Animator>().SetBool("Run", false);
         ResultPanel.GetComponent<Animator>().SetBool("Open", true);
         MainUI.GetComponent<Animator>().SetBool("Open", false);
         StartPanel.GetComponent<StartWindow>().goResult();

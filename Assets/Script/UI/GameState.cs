@@ -44,40 +44,86 @@ public class GameState : MonoBehaviour
         ResultMonay.text = "収入：" + EarnedMoney.ToString("F0") + "円";
         ResultCleared.text = "配達数：" + MissionCleared.ToString() + "件";
 
+        if(EarnedMoney >= 30000)
+        {
+            ResultRank.text = "†配達神†";
+        }
+        else if(EarnedMoney >= 25000)
+        {
+            ResultRank.text = "配達王";
+        }
+        else if (EarnedMoney >= 20000)
+        {
+            ResultRank.text = "伝説の運び屋";
+        }
+        else if (EarnedMoney >= 17500)
+        {
+            ResultRank.text = "超光速の運び屋";
+        }
+        else if (EarnedMoney >= 15000)
+        {
+            ResultRank.text = "音速の運び屋";
+        }
+        else if (EarnedMoney >= 12500)
+        {
+            ResultRank.text = "疾風の運び屋";
+        }
+        else if (EarnedMoney >= 10000)
+        {
+            ResultRank.text = "第二宇宙速度";
+        }
+        else if (EarnedMoney >= 8000)
+        {
+            ResultRank.text = "孤高の配達人";
+        }
+        else if (EarnedMoney >= 6000)
+        {
+            ResultRank.text = "必殺配達人";
+        }
+        else if (EarnedMoney >= 4000)
+        {
+            ResultRank.text = "エリート配達人";
+        }
+        else if (EarnedMoney >= 2500)
+        {
+            ResultRank.text = "配達上級者";
+        }
+        else if (EarnedMoney >= 1500)
+        {
+            ResultRank.text = "配達中級者";
+        }
+        else if (EarnedMoney >= 1)
+        {
+            ResultRank.text = "配達初心者";
+        }
+        else
+        {
+            ResultRank.text = "補助輪付き";
+        }
+
         switch (MissionCleared)
         {
             case 1:
-                ResultRank.text = "配達初心者";
                 break;
             case 5:
-                ResultRank.text = "配達中級者";
                 break;
             case 10:
-                ResultRank.text = "配達上級者";
                 break;
             case 15:
-                ResultRank.text = "エリート配達人";
                 break;
             case 20:
-                ResultRank.text = "必殺配達人";
                 break;
             case 25:
-                ResultRank.text = "音速の配達人";
                 break;
             case 30:
-                ResultRank.text = "競輪選手";
                 break;
             case 35:
-                ResultRank.text = "疾風迅雷";
                 break;
             case 40:
-                ResultRank.text = "超光速";
                 break;
             case 45:
-                ResultRank.text = "伝説の運び屋";
                 break;
             case 50:
-                ResultRank.text = "配達神";
                 break;
             default:
                 ResultRank.text = ResultRank.text;

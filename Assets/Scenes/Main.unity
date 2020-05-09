@@ -3069,7 +3069,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5FC5\u6BBA\u914D\u9054\u4EBA"
+  m_Text: "\u2020\u914D\u9054\u795E\u2020"
 --- !u!222 &1373600857
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4648,6 +4648,7 @@ GameObject:
   - component: {fileID: 2118687893}
   - component: {fileID: 2118687899}
   - component: {fileID: 2118687900}
+  - component: {fileID: 2118687901}
   m_Layer: 0
   m_Name: PlayerTmp
   m_TagString: Player
@@ -4985,6 +4986,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2118687901
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118687892}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15b520b89171d6c41af551a3fc26adcf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2143216080
 GameObject:
   m_ObjectHideFlags: 0
