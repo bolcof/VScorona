@@ -136,6 +136,19 @@ public class StartWindow : MonoBehaviour
 
     }
 
+    public void pushHowto()
+    {
+        if (PlayerPrefs.GetInt("Mute", 0) == 0)
+        {
+            AS.PlayOneShot(dicide);
+        }
+
+        this.gameObject.GetComponent<Animator>().SetBool("Open", false);
+        
+        HowtoPanel.GetComponent<Animator>().SetBool("Open", true);
+
+    }
+
     public void goResult()
     {
         if (PlayerPrefs.GetInt("Mute", 0) == 0)
