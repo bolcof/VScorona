@@ -40,6 +40,9 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip EnemyHit;
     public AudioClip MaskSE, AmabieSE;
 
+    public Animator BarriarAnim;
+    private float ResistRemainTime = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -123,6 +126,15 @@ public class PlayerBehaviour : MonoBehaviour
         {
             DeliveryTime += Time.deltaTime;
         }
+
+        if (ResistRemainTime > 0.0f)
+        {
+            ResistRemainTime -= Time.deltaTime;
+            if (ResistRemainTime <= 0.0f)
+            {
+                LostBarriar();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -133,18 +145,22 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 case "Enemy":
                     Debug.Log("Enemy");
-                    if (PlayerPrefs.GetInt("Mute", 0) == 0)
-                    {
-                        AS.PlayOneShot(EnemyHit);
-                    }
                     if (!Resist)
                     {
+                        if (PlayerPrefs.GetInt("Mute", 0) == 0)
+                        {
+                            AS.PlayOneShot(EnemyHit);
+                        }
                         Mask--;
                         if (Mask == -1)
                         {
                             Mask = 0;
                             GameOver();
                             isPlaying = false;
+                        }
+                        else
+                        {
+                            GetBarriar(1.8f);
                         }
                         maskText.text = Mask.ToString();
                     }
@@ -221,7 +237,7 @@ public class PlayerBehaviour : MonoBehaviour
                     {
                         AS.PlayOneShot(AmabieSE);
                     }
-
+                    GetBarriar(6.3f);
                     break;
             }
         }
@@ -238,5 +254,26 @@ public class PlayerBehaviour : MonoBehaviour
         MainUI.GetComponent<Animator>().SetBool("Open", false);
         StartPanel.GetComponent<StartWindow>().goResult();
         this.gameObject.GetComponent<Rigidbody>().drag = 0.5f;
+    }
+
+    private void GetBarriar(float time)
+    {
+        ResistRemainTime = Mathf.Max(ResistRemainTime, time);
+        BarriarAnim.SetBool("Resist", true);
+        Resist = true;
+    }
+
+    private void LostBarriar()
+    {
+        BarriarAnim.SetBool("Resist", false);
+        Invoke("LostResist", 1.2f);
+    }
+
+    private void LostResist()
+    {
+        if (ResistRemainTime <= 0.0f)
+        {
+            Resist = false;
+        }
     }
 }

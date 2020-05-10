@@ -1978,7 +1978,6 @@ GameObject:
   - component: {fileID: 907905494}
   - component: {fileID: 907905497}
   - component: {fileID: 907905496}
-  - component: {fileID: 907905495}
   m_Layer: 0
   m_Name: LogoPlane
   m_TagString: Untagged
@@ -2000,20 +1999,6 @@ Transform:
   m_Father: {fileID: 2118687896}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 54, y: 180.00002, z: 0}
---- !u!64 &907905495
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907905493}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &907905496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4415,7 +4400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041229406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.77, z: -1.5}
+  m_LocalPosition: {x: 0, y: 0.55, z: -1.5}
   m_LocalScale: {x: 4.7, y: 4.7, z: 4.7}
   m_Children: []
   m_Father: {fileID: 2118687896}
@@ -4901,6 +4886,7 @@ MonoBehaviour:
   EnemyHit: {fileID: 8300000, guid: 08e09036e1fc69f4eaf055009518b008, type: 3}
   MaskSE: {fileID: 8300000, guid: 7d661cdf0c6f5ae4fb97397acccce38a, type: 3}
   AmabieSE: {fileID: 8300000, guid: 6617c2d324a6b1747a157c3cc1dc26c7, type: 3}
+  BarriarAnim: {fileID: 2041229408}
 --- !u!54 &2118687898
 Rigidbody:
   m_ObjectHideFlags: 0
