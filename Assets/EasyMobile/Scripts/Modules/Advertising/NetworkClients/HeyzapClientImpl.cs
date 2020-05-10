@@ -66,7 +66,7 @@ namespace EasyMobile
 
         #region AdClient Overrides
 
-        public override AdNetwork Network { get { return AdNetwork.Heyzap; } }
+        public override AdNetwork Network { get { return AdNetwork.TapJoy; } }
 
         public override bool IsBannerAdSupported { get { return true; } }
 

@@ -17,7 +17,7 @@ namespace EasyMobile.Editor
         const string AdColonyAvailMsg = "AdColony plugin was imported.";
         const string AdMobImportInstruction = "Google Mobile Ads (AdMob) plugin not found. Please download and import it to show ads from AdMob.";
         const string AdMobAvailMsg = "Google Mobile Ads (AdMob) plugin was imported.";
-        const string SetupGoogleMobileAdsMsg = "Click the below button to setup the Google Mobile Ads plugin with your App IDs. The entered IDs will be reflected here. IMPORTANT: failure to do this will cause AdMob ads to not function properly.";
+        const string SetupGoogleMobileAdsMsg = "IMPORTANT: click the below button to setup the Google Mobile Ads plugin with your AdMob app IDs. Failure to do this will cause AdMob ads to not function properly.";
         const string AppLovinImportInstruction = "AppLovin plugin not found. Please download and import it to show ads from AppLovin.";
         const string AppLovinAvailMsg = "AppLovin plugin was imported.";
         const string ChartboostImportInstruction = "Chartboost plugin not found. Please download and import it to show ads from Chartboost.";
@@ -26,10 +26,10 @@ namespace EasyMobile.Editor
         const string ChartboostCustomAdPlacementMsg = "Here you can register the custom placements to be automatically loaded with LoadAllDefinedPlacements mode. These placements are directly translated into Chartboost's ad locations of the same name, no need to enter any associated IDs here.";
         const string FBAudienceImportInstruction = "Facebook Audience Network plugin not found. Please download and import it to show ads from FB Audience.";
         const string FBAudienceAvailMsg = "Facebook Audience Network plugin was imported.";
-        const string HeyzapImportInstruction = "Heyzap plugin not found. Please download and import it to show ads from Heyzap.";
-        const string HeyzapAvailMsg = "Heyzap plugin was imported.";
-        const string HeyzapDefaultAdPlacementMsg = "Easy Mobile's Default ad placement is directly translated into Heyzap's default ad tag, no need to enter any associated ID here. The Default placement is loaded automatically if LoadAllDefinedPlacements mode is enabled.";
-        const string HeyzapCustomAdPlacementMsg = "Here you can register the custom placements to be automatically loaded with LoadAllDefinedPlacements mode. These placements are directly translated into Heyzap's ad tags of the same name, no need to enter any associated IDs here.";
+        const string FairBidImportInstruction = "FairBid plugin not found. Please download and import it to show ads from FairBid.";
+        const string FairBidAvailMsg = "FairBid plugin was imported.";
+        const string FairBidDefaultAdPlacementMsg = "Easy Mobile's Default ad placement is directly translated into FairBid's default ad tag, no need to enter any associated ID here. The Default placement is loaded automatically if LoadAllDefinedPlacements mode is enabled.";
+        const string FairBidCustomAdPlacementMsg = "Here you can register the custom placements to be automatically loaded with LoadAllDefinedPlacements mode. These placements are directly translated into FairBid's ad tags of the same name, no need to enter any associated IDs here.";
         const string MoPubImportInstruction = "MoPub plugin not found. Please download and import it to show ads from MoPub.";
         const string MoPubAvailMsg = "MoPub plugin was imported.";
         const string IronSourceImportInstruction = "IronSource plugin not found. Please download and import it to show ads from IronSource.";
@@ -138,8 +138,8 @@ namespace EasyMobile.Editor
             // Chartboost setup
             DrawChartboostSettings();
 
-            // Heyzap setup
-            DrawHeyzapSettings();
+            // FairBid setup
+            DrawFairBidSettings();
 
             // IronSource setup
             DrawIronSourceSettings();
@@ -237,20 +237,21 @@ namespace EasyMobile.Editor
                     EditorGUILayout.LabelField("Setup", EditorStyles.boldLabel);
                     EditorGUILayout.HelpBox(SetupGoogleMobileAdsMsg, MessageType.Info);
 
-                    // Get the App IDs from GoogleMobileAdsSettings.
-                    var iOSAppId = GoogleMobileAds.Editor.GoogleMobileAdsSettings.Instance.AdMobIOSAppId;
-                    var androidAppId = GoogleMobileAds.Editor.GoogleMobileAdsSettings.Instance.AdMobAndroidAppId;
+                    /** Since version 5, GoogleMobileAds plugin no longer allows accessing App IDs **/
+                    //// Get the App IDs from GoogleMobileAdsSettings.
+                    //var iOSAppId = GoogleMobileAds.Editor.GoogleMobileAdsSettings.Instance.AdMobIOSAppId;
+                    //var androidAppId = GoogleMobileAds.Editor.GoogleMobileAdsSettings.Instance.AdMobAndroidAppId;
 
-                    if (!EM_Settings.Advertising.AdMob.AppId.IosId.Equals(iOSAppId) ||
-                    !EM_Settings.Advertising.AdMob.AppId.AndroidId.Equals(androidAppId))
-                        EM_Settings.Advertising.AdMob.AppId = new AdId(iOSAppId, androidAppId);
+                    //if (!EM_Settings.Advertising.AdMob.AppId.IosId.Equals(iOSAppId) ||
+                    //!EM_Settings.Advertising.AdMob.AppId.AndroidId.Equals(androidAppId))
+                    //    EM_Settings.Advertising.AdMob.AppId = new AdId(iOSAppId, androidAppId);
 
-                    // Display the App IDs as readonly.
-                    EditorGUI.BeginDisabledGroup(true);
-                    EditorGUI.indentLevel++;
-                    EditorGUILayout.PropertyField(AdProperties.admobAppId.property, AdProperties.admobAppId.content, true);
-                    EditorGUI.indentLevel--;
-                    EditorGUI.EndDisabledGroup();
+                    //// Display the App IDs as readonly.
+                    //EditorGUI.BeginDisabledGroup(true);
+                    //EditorGUI.indentLevel++;
+                    //EditorGUILayout.PropertyField(AdProperties.admobAppId.property, AdProperties.admobAppId.content, true);
+                    //EditorGUI.indentLevel--;
+                    //EditorGUI.EndDisabledGroup();
 
                     EditorGUILayout.Space();
                     if (GUILayout.Button("Setup Google Mobile Ads", GUILayout.Height(EM_GUIStyleManager.buttonHeight)))
@@ -392,11 +393,6 @@ namespace EasyMobile.Editor
                     EditorGUILayout.PropertyField(AdProperties.appLovinCustomRewardedAdIds.property, AdProperties.appLovinCustomRewardedAdIds.content, true);
                     EditorGUI.indentLevel--;
 
-                    // Test mode.
-                    EditorGUILayout.Space();
-                    EditorGUILayout.LabelField("Test Mode", EditorStyles.boldLabel);
-                    EditorGUILayout.PropertyField(AdProperties.appLovinEnableTestMode.property, AdProperties.appLovinEnableTestMode.content);
-
                     // Age-restricted.
                     EditorGUILayout.Space();
                     EditorGUILayout.LabelField("Age-restricted", EditorStyles.boldLabel);
@@ -511,53 +507,66 @@ namespace EasyMobile.Editor
                 });
         }
 
-        void DrawHeyzapSettings()
+        void DrawFairBidSettings()
         {
             EditorGUILayout.Space();
-            DrawUppercaseSection("HEYZAP_SETUP_FOLDOUT_KEY", "HEYZAP (FYBER)", () =>
+            DrawUppercaseSection("FAIRBID_SETUP_FOLDOUT_KEY", "FAIRBID (FYBER)", () =>
                 {
-#if !EM_HEYZAP
-                    EditorGUILayout.HelpBox(HeyzapImportInstruction, MessageType.Warning);
-                    if (GUILayout.Button("Download Heyzap Plugin", GUILayout.Height(EM_GUIStyleManager.buttonHeight)))
+#if !EM_FAIRBID
+                    EditorGUILayout.HelpBox(FairBidImportInstruction, MessageType.Warning);
+                    if (GUILayout.Button("Download FairBid Plugin", GUILayout.Height(EM_GUIStyleManager.buttonHeight)))
                     {
-                        EM_ExternalPluginManager.DownloadHeyzapPlugin();
+                        EM_ExternalPluginManager.DownloadFairBidPlugin();
                     }
 #else
-                    EditorGUILayout.HelpBox(HeyzapAvailMsg, MessageType.Info);
-                    if (GUILayout.Button("Download Heyzap Plugin", GUILayout.Height(EM_GUIStyleManager.buttonHeight)))
+                    EditorGUILayout.HelpBox(FairBidAvailMsg, MessageType.Info);
+                    if (GUILayout.Button("Download FairBid Plugin", GUILayout.Height(EM_GUIStyleManager.buttonHeight)))
                     {
-                        EM_ExternalPluginManager.DownloadHeyzapPlugin();
+                        EM_ExternalPluginManager.DownloadFairBidPlugin();
                     }
                     EditorGUILayout.Space();
 
                     // Publisher ID.
                     EditorGUILayout.LabelField("Publisher ID", EditorStyles.boldLabel);
-                    AdProperties.heyzapPublisherId.property.stringValue = EditorGUILayout.TextField(AdProperties.heyzapPublisherId.content, AdProperties.heyzapPublisherId.property.stringValue);
+                    AdProperties.fairBidPublisherId.property.stringValue = EditorGUILayout.TextField(AdProperties.fairBidPublisherId.content, AdProperties.fairBidPublisherId.property.stringValue);
 
                     // Placements.
                     EditorGUILayout.Space();
+                    //EditorGUILayout.LabelField("Default Placement", EditorStyles.boldLabel);
+                    //EditorGUILayout.HelpBox(FairBidDefaultAdPlacementMsg, MessageType.None);
+                    // Default placements.
+                    EditorGUILayout.Space();
                     EditorGUILayout.LabelField("Default Placement", EditorStyles.boldLabel);
-                    EditorGUILayout.HelpBox(HeyzapDefaultAdPlacementMsg, MessageType.None);
+                    EditorGUI.indentLevel++;
+                    EditorGUILayout.PropertyField(AdProperties.fairBidDefaultBannerAdId.property, AdProperties.fairBidDefaultBannerAdId.content, true);
+                    EditorGUILayout.PropertyField(AdProperties.fairBidDefaultInterstitialAdId.property, AdProperties.fairBidDefaultInterstitialAdId.content, true);
+                    EditorGUILayout.PropertyField(AdProperties.fairBidDefaultRewardedAdId.property, AdProperties.fairBidDefaultBannerAdId.content, true);
+                    EditorGUI.indentLevel--;
 
                     // Custom Placements.
                     EditorGUILayout.Space();
                     EditorGUILayout.LabelField("Custom Placements", EditorStyles.boldLabel);
-                    EditorGUILayout.HelpBox(HeyzapCustomAdPlacementMsg, MessageType.None);
+                    EditorGUILayout.HelpBox(FairBidCustomAdPlacementMsg, MessageType.None);
 
                     EditorGUI.indentLevel++;
-                    if (DrawPropertyAsResizableArray(AdProperties.heyzapCustomInterstitialPlacements.property, AdProperties.heyzapCustomInterstitialPlacements.content, null, null, true))
-                        DrawAllElementsInArrayProperty(AdProperties.heyzapCustomInterstitialPlacements.property);
+                    if (DrawPropertyAsResizableArray(AdProperties.fairBidCustomBannerPlacements.property, AdProperties.fairBidCustomBannerPlacements.content, null, null, true))
+                        DrawAllElementsInArrayProperty(AdProperties.fairBidCustomBannerPlacements.property);
                     EditorGUI.indentLevel--;
 
                     EditorGUI.indentLevel++;
-                    if (DrawPropertyAsResizableArray(AdProperties.heyzapCustomRewardedPlacements.property, AdProperties.heyzapCustomRewardedPlacements.content, null, null, true))
-                        DrawAllElementsInArrayProperty(AdProperties.heyzapCustomRewardedPlacements.property);
+                    if (DrawPropertyAsResizableArray(AdProperties.fairBidCustomInterstitialPlacements.property, AdProperties.fairBidCustomInterstitialPlacements.content, null, null, true))
+                        DrawAllElementsInArrayProperty(AdProperties.fairBidCustomInterstitialPlacements.property);
+                    EditorGUI.indentLevel--;
+
+                    EditorGUI.indentLevel++;
+                    if (DrawPropertyAsResizableArray(AdProperties.fairBidCustomRewardedPlacements.property, AdProperties.fairBidCustomRewardedPlacements.content, null, null, true))
+                        DrawAllElementsInArrayProperty(AdProperties.fairBidCustomRewardedPlacements.property);
                     EditorGUI.indentLevel--;
 
                     // Test mode.
                     EditorGUILayout.Space();
                     EditorGUILayout.LabelField("Test Mode", EditorStyles.boldLabel);
-                    AdProperties.heyzapShowTestSuite.property.boolValue = EditorGUILayout.Toggle(AdProperties.heyzapShowTestSuite.content, AdProperties.heyzapShowTestSuite.property.boolValue);
+                    AdProperties.fairBidShowTestSuite.property.boolValue = EditorGUILayout.Toggle(AdProperties.fairBidShowTestSuite.content, AdProperties.fairBidShowTestSuite.property.boolValue);
 #endif
                 });
         }
@@ -908,8 +917,8 @@ namespace EasyMobile.Editor
 #else
                     return false;
 #endif
-                case AdNetwork.Heyzap:
-#if EM_HEYZAP
+                case AdNetwork.FairBid:
+#if EM_FAIRBID
                     return true;
 #else
                     return false;

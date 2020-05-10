@@ -22,8 +22,8 @@ namespace EasyMobile.Editor
         // Facebook Audience Network.
         public const string FBAudienceNameSpace = "AudienceNetwork";
 
-        // Heyzap
-        public const string HeyzapNameSpace = "Heyzap";
+        // FairBid
+        public const string FairBidNameSpace = "Fyber";
 
         // IronSource
         public const string IronSourceClassname = "IronSource";
@@ -58,12 +58,12 @@ namespace EasyMobile.Editor
         public const string PlayMakerUguiAddOnClass = "PlayMakerUGuiSceneProxy";
 
         // Advertising 3rd party plugins URLs
-        public const string AdColonyDownloadURL = "https://github.com/AdColony/AdColony-Unity-SDK-3";
+        public const string AdColonyDownloadURL = "https://github.com/AdColony/AdColony-Unity-Plugin";
         public const string ChartboostDownloadURL = "https://answers.chartboost.com/en-us/articles/download";
         public const string FBAudienceDownloadURL = "https://developers.facebook.com/docs/audience-network/download#unity";
         public const string GoogleMobileAdsDownloadURL = "https://github.com/googleads/googleads-mobile-unity/releases";
         public const string AppLovinDownloadURL = "https://www.applovin.com/monetize/";
-        public const string HeyzapDownloadURL = "https://developers.heyzap.com/docs/unity_sdk_setup_and_requirements";
+        public const string FairBidDownloadURL = "https://dev-unity.fyber.com/docs";
         public const string IronSourceDownloadURL = "https://developers.ironsrc.com/ironsource-mobile/unity/unity-plugin/#step-1";
         public const string MoPubDownloadURL = "https://github.com/mopub/mopub-unity-sdk/";
         public const string TapJoyDownloadURL = "https://ltv.tapjoy.com/d/sdks";
@@ -76,7 +76,7 @@ namespace EasyMobile.Editor
         public const string FirebaseDownloadURL = "https://firebase.google.com/docs/unity/setup";
 
         // PlayServicesResolver
-        public const string PlayServicesResolverPackagePath = EM_Constants.PackagesFolder + "/PlayServicesResolver/play-services-resolver.unitypackage";
+        public const string PlayServicesResolverPackagePath = EM_Constants.PackagesFolder + "/ExternalDependencyManager/external-dependency-manager-latest.unitypackage";
 
         // PlayMaker actions for EM.
         public const string PlayMakerActionsPackagePath = EM_Constants.PackagesFolder + "/PlayMakerActions/PlayMakerActions.unitypackage";
@@ -129,12 +129,12 @@ namespace EasyMobile.Editor
         }
 
         /// <summary>
-        /// Determines if Heyzap plugin is available.
+        /// Determines if FairBid plugin is available.
         /// </summary>
-        /// <returns><c>true</c> if Heyzap plugin available; otherwise, <c>false</c>.</returns>
-        public static bool IsHeyzapAvail()
+        /// <returns><c>true</c> if FairBid plugin available; otherwise, <c>false</c>.</returns>
+        public static bool IsFairBidAvail()
         {
-            return EM_EditorUtil.NamespaceExists(HeyzapNameSpace);
+            return EM_EditorUtil.NamespaceExists(FairBidNameSpace);
         }
 
         /// <summary>
@@ -249,9 +249,9 @@ namespace EasyMobile.Editor
             Application.OpenURL(ChartboostDownloadURL);
         }
 
-        public static void DownloadHeyzapPlugin()
+        public static void DownloadFairBidPlugin()
         {
-            Application.OpenURL(HeyzapDownloadURL);
+            Application.OpenURL(FairBidDownloadURL);
         }
 
         public static void DownloadAdColonyPlugin()
