@@ -322,9 +322,9 @@ MonoBehaviour:
       - mKey: NSContactsUsageDescription
         mValue: '[Your usage description]'
   mIsAdModuleEnable: 0
-  mIsIAPModuleEnable: 0
+  mIsIAPModuleEnable: 1
   mIsGameServiceModuleEnable: 0
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 1
-  mActiveModuleIndex: 7
-  mIsSelectingModule: 1
+  mActiveModuleIndex: 3
+  mIsSelectingModule: 0
