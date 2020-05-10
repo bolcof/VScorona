@@ -28,7 +28,11 @@ public class GameState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log("Screen Shot");
+            ScreenCapture.CaptureScreenshot("image_.png");
+        }
     }
 
     public void MissionClear()
