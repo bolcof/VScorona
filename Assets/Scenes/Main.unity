@@ -178,6 +178,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.039
       objectReference: {fileID: 0}
+    - target: {fileID: 5437899459450232253, guid: b23c05796a9d5fb42bf4d2ba1844bb82,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 125.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437899459450232253, guid: b23c05796a9d5fb42bf4d2ba1844bb82,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437899459450538641, guid: b23c05796a9d5fb42bf4d2ba1844bb82,
+        type: 3}
+      propertyPath: m_Name
+      value: ErrorCode
+      objectReference: {fileID: 0}
     - target: {fileID: 5437899459718075200, guid: b23c05796a9d5fb42bf4d2ba1844bb82,
         type: 3}
       propertyPath: m_Name
@@ -727,6 +742,7 @@ MonoBehaviour:
   cancel: {fileID: 8300000, guid: 7c6eeb47d82763a4d807109f5fd5969f, type: 3}
   Mitsu: {fileID: 8300000, guid: 5b1ecc7ca6ca1c44fbe90d3409227565, type: 3}
   crap: {fileID: 8300000, guid: c7b5fba5765502a42a495917a55ac7bc, type: 3}
+  isDebug: 1
 --- !u!95 &438019873
 Animator:
   serializedVersion: 3

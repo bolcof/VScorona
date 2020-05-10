@@ -16,7 +16,9 @@ public class StartWindow : MonoBehaviour
     public AudioSource AS;
     public AudioClip dicide, cancel;
     public AudioClip Mitsu, crap;
-    
+
+    public bool isDebug;
+
     private void Start()
     {
         if (PlayerPrefs.GetInt("noAds", 0) == 0)
@@ -61,6 +63,7 @@ public class StartWindow : MonoBehaviour
 #elif UNITY_ANDROID && !UNITY_EDITOR
         adUnitId = "ca-app-pub-7199806318674055/7120378010";
 #endif
+        if (isDebug) { adUnitId = "ca-app-pub-3940256099942544/6300978111"; }
         // Create a 320x50 banner at the top of the screen.
         bannerViewBottom = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
 
@@ -81,6 +84,7 @@ public class StartWindow : MonoBehaviour
 #elif UNITY_ANDROID && !UNITY_EDITOR
         adUnitId = "ca-app-pub-7199806318674055/7120378010";
 #endif
+        if (isDebug) { adUnitId = "ca-app-pub-3940256099942544/6300978111"; }
         // Create a 320x50 banner at the top of the screen.
         bannerViewTop = new BannerView(adUnitId, AdSize.Banner, AdPosition.Top);
 
