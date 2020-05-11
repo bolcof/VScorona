@@ -98,11 +98,11 @@ namespace EasyMobile
         }
 
         /// <summary>
-        /// Gets the FairBid settings.
+        /// Gets the Heyzap settings.
         /// </summary>
-        public FairBidSettings FairBid
+        public HeyzapSettings Heyzap
         {
-            get { return mFairBid; }
+            get { return mHeyzap; }
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace EasyMobile
         [SerializeField]
         private ChartboostSettings mChartboost = null;
         [SerializeField]
-        private FairBidSettings mFairBid = null;
+        private HeyzapSettings mHeyzap = null;
         [SerializeField]
         private IronSourceSettings mIronSource = null;
         [SerializeField]

@@ -236,6 +236,12 @@ namespace EasyMobile
             AppLovin.SetSdkKey(mAdSettings.SDKKey);
             AppLovin.InitializeSdk();
 
+            // Test Mode
+            if (mAdSettings.EnableTestMode)
+                AppLovin.SetTestAdsEnabled("true");
+            else
+                AppLovin.SetTestAdsEnabled("false");
+
             // Age-Restricted 
             if (mAdSettings.AgeRestrictMode)
                 AppLovin.SetIsAgeRestrictedUser("true");

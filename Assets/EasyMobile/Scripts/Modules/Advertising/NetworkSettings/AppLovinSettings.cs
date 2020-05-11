@@ -43,7 +43,16 @@ namespace EasyMobile
         { 
             get { return mDefaultRewardedAdId; } 
             set { mDefaultRewardedAdId = value; }
-        } 
+        }
+
+        /// <summary>
+        /// Enables or disables test mode.
+        /// </summary>
+        public bool EnableTestMode
+        {
+            get { return mEnableTestMode; }
+            set { mEnableTestMode = value; }
+        }
 
         /// <summary>
         /// age-restricted category.
@@ -83,6 +92,10 @@ namespace EasyMobile
             get { return mCustomRewardedAdIds; }
             set { mCustomRewardedAdIds = value as Dictionary_AdPlacement_AdId; }
         }
+
+       
+        [SerializeField]
+        private bool mEnableTestMode;
 
         [SerializeField]
         private bool mAgeRestrictMode;

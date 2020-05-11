@@ -65,10 +65,10 @@ namespace EasyMobile.Editor
                 symbols.Add(EM_ScriptingSymbols.Chartboost);
             }
 
-            // FairBid
-            if (EM_ExternalPluginManager.IsFairBidAvail())
+            // Heyzap
+            if (EM_ExternalPluginManager.IsHeyzapAvail())
             {
-                symbols.Add(EM_ScriptingSymbols.FairBid);
+                symbols.Add(EM_ScriptingSymbols.Heyzap);
             }
 
             // IronSource
@@ -112,7 +112,7 @@ namespace EasyMobile.Editor
                     EM_ScriptingSymbols.AppLovin,
                     EM_ScriptingSymbols.FBAudience,
                     EM_ScriptingSymbols.Chartboost,
-                    EM_ScriptingSymbols.FairBid,
+                    EM_ScriptingSymbols.Heyzap,
                     EM_ScriptingSymbols.IronSource,
                     EM_ScriptingSymbols.MoPub,
                     EM_ScriptingSymbols.TapJoy,

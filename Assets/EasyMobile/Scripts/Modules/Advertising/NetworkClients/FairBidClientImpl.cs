@@ -112,7 +112,7 @@ namespace EasyMobile
 
         #region AdClient Overrides
 
-        public override AdNetwork Network { get { return AdNetwork.FairBid; } }
+        public override AdNetwork Network { get { return AdNetwork.Heyzap;/*FiarBid*/ } }
 
         public override bool IsBannerAdSupported { get { return true; } }
 
