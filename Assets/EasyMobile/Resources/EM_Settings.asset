@@ -230,8 +230,8 @@ MonoBehaviour:
     mSimulateAppleAskToBuy: 0
     mInterceptApplePromotionalPurchases: 0
     mEnableAmazonSandboxTesting: 0
-    mValidateAppleReceipt: 1
-    mValidateGooglePlayReceipt: 1
+    mValidateAppleReceipt: 0
+    mValidateGooglePlayReceipt: 0
     mProducts: []
   mNotificationSettings:
     mAutoInit: 1
@@ -294,9 +294,9 @@ MonoBehaviour:
       mValue: android.permission.WRITE_EXTERNAL_STORAGE
     mIOSInfoPlistItems:
     - mKey: NSPhotoLibraryUsageDescription
-      mValue: "\u30B9\u30AF\u30EA\u30FC\u30F3\u30B7\u30E7\u30C3\u30C8\u3092\u4FDD\u5B58\u3057\u307E\u3059"
+      mValue: '[Your usage description]'
     - mKey: NSPhotoLibraryAddUsageDescription
-      mValue: "\u30B9\u30AF\u30EA\u30FC\u30F3\u30B7\u30E7\u30C3\u30C8\u3092\u4FDD\u5B58\u3057\u307E\u3059"
+      mValue: '[Your usage description]'
   mNativeApisSettings:
     mIsMediaEnabled: 0
     mMediaSettings:
@@ -328,6 +328,6 @@ MonoBehaviour:
   mIsIAPModuleEnable: 1
   mIsGameServiceModuleEnable: 0
   mIsNotificationModuleEnable: 0
-  mIsSharingModuleEnable: 1
+  mIsSharingModuleEnable: 0
   mActiveModuleIndex: 3
   mIsSelectingModule: 0
