@@ -64,7 +64,7 @@ namespace EasyMobile.Editor
             public static SerializedProperty appLovinSettings;
             public static SerializedProperty chartboostSettings;
             public static SerializedProperty fbAudienceSettings;
-            public static SerializedProperty fairBidSettings;
+            public static SerializedProperty heyzapSettings;
             public static SerializedProperty ironSourceSettings;
             public static SerializedProperty mopubSettings;
             public static SerializedProperty tapjoySettings;
@@ -109,6 +109,7 @@ namespace EasyMobile.Editor
             public static EMProperty appLovinCustomBannerAdIds = new EMProperty(new GUIContent("Banner Ads"));
             public static EMProperty appLovinCustomInterstitialAdIds = new EMProperty(new GUIContent("Interstitial Ads"));
             public static EMProperty appLovinCustomRewardedAdIds = new EMProperty(new GUIContent("Rewarded Ads"));
+            public static EMProperty appLovinEnableTestMode = new EMProperty(new GUIContent("Enable Test Mode"));
             public static EMProperty appLovinEnableAgeRestricted = new EMProperty(new GUIContent("Enable Age-Restricted"));
 
             // Chartboost properties.
@@ -126,16 +127,11 @@ namespace EasyMobile.Editor
             public static EMProperty fbAudienceEnableTestMode = new EMProperty(new GUIContent("Enable Test Mode"));
             public static EMProperty fbAudienceTestDeviceIds = new EMProperty(new GUIContent("Test Device IDs"));
 
-            // FairBid properties.
-            public static EMProperty fairBidPublisherId = new EMProperty(null, new GUIContent("FairBid Publisher ID"));
-            public static EMProperty fairBidShowTestSuite = new EMProperty(null, new GUIContent("Show FairBid Test Suite"));
-
-            public static EMProperty fairBidDefaultBannerAdId = new EMProperty(new GUIContent("Banner Ad"));
-            public static EMProperty fairBidDefaultInterstitialAdId = new EMProperty(new GUIContent("Interstitial Ad"));
-            public static EMProperty fairBidDefaultRewardedAdId = new EMProperty(new GUIContent("Rewarded Ad"));
-            public static EMProperty fairBidCustomBannerPlacements = new EMProperty(new GUIContent("Banner Ads"));
-            public static EMProperty fairBidCustomInterstitialPlacements = new EMProperty(new GUIContent("Interstitial Ads"));
-            public static EMProperty fairBidCustomRewardedPlacements = new EMProperty(new GUIContent("Rewarded Ads"));
+            // Heyzap properties.
+            public static EMProperty heyzapPublisherId = new EMProperty(null, new GUIContent("Heyzap Publisher ID"));
+            public static EMProperty heyzapShowTestSuite = new EMProperty(null, new GUIContent("Show Heyzap Test Suite"));
+            public static EMProperty heyzapCustomInterstitialPlacements = new EMProperty(new GUIContent("Interstitial Ads"));
+            public static EMProperty heyzapCustomRewardedPlacements = new EMProperty(new GUIContent("Rewarded Ads"));
 
             // IronSource properties.
             public static EMProperty ironSourceAppKey = new EMProperty(null, new GUIContent("App Key"));
@@ -375,6 +371,7 @@ namespace EasyMobile.Editor
             AdProperties.appLovinCustomBannerAdIds.property = AdProperties.appLovinSettings.FindPropertyRelative("mCustomBannerAdIds");
             AdProperties.appLovinCustomInterstitialAdIds.property = AdProperties.appLovinSettings.FindPropertyRelative("mCustomInterstitialAdIds");
             AdProperties.appLovinCustomRewardedAdIds.property = AdProperties.appLovinSettings.FindPropertyRelative("mCustomRewardedAdIds");
+            AdProperties.appLovinEnableTestMode.property = AdProperties.appLovinSettings.FindPropertyRelative("mEnableTestMode");
             AdProperties.appLovinEnableAgeRestricted.property = AdProperties.appLovinSettings.FindPropertyRelative("mAgeRestrictMode");
 
             // Chartboost properties.
@@ -395,16 +392,12 @@ namespace EasyMobile.Editor
             AdProperties.fbAudienceTestDeviceIds.property = AdProperties.fbAudienceSettings.FindPropertyRelative("mTestDevices");
             AdProperties.fbAudienceBannerSize.property = AdProperties.fbAudienceSettings.FindPropertyRelative("mBannerAdSize");
 
-            // FairBid properties.
-            AdProperties.fairBidSettings = AdProperties.mainProperty.FindPropertyRelative("mFairBid");
-            AdProperties.fairBidPublisherId.property = AdProperties.fairBidSettings.FindPropertyRelative("mPublisherId");
-            AdProperties.fairBidShowTestSuite.property = AdProperties.fairBidSettings.FindPropertyRelative("mShowTestSuite");
-            AdProperties.fairBidDefaultBannerAdId.property = AdProperties.fairBidSettings.FindPropertyRelative("mDefaultBannerId");
-            AdProperties.fairBidDefaultInterstitialAdId.property = AdProperties.fairBidSettings.FindPropertyRelative("mDefaultInterstitialAdId");
-            AdProperties.fairBidDefaultRewardedAdId.property = AdProperties.fairBidSettings.FindPropertyRelative("mDefaultRewardedAdId");
-            AdProperties.fairBidCustomBannerPlacements.property = AdProperties.fairBidSettings.FindPropertyRelative("mCustomBannerPlacements");
-            AdProperties.fairBidCustomInterstitialPlacements.property = AdProperties.fairBidSettings.FindPropertyRelative("mCustomInterstitialPlacements");
-            AdProperties.fairBidCustomRewardedPlacements.property = AdProperties.fairBidSettings.FindPropertyRelative("mCustomRewardedPlacements");
+            // Heyzap properties.
+            AdProperties.heyzapSettings = AdProperties.mainProperty.FindPropertyRelative("mHeyzap");
+            AdProperties.heyzapPublisherId.property = AdProperties.heyzapSettings.FindPropertyRelative("mPublisherId");
+            AdProperties.heyzapShowTestSuite.property = AdProperties.heyzapSettings.FindPropertyRelative("mShowTestSuite");
+            AdProperties.heyzapCustomInterstitialPlacements.property = AdProperties.heyzapSettings.FindPropertyRelative("mCustomInterstitialPlacements");
+            AdProperties.heyzapCustomRewardedPlacements.property = AdProperties.heyzapSettings.FindPropertyRelative("mCustomRewardedPlacements");
 
             // IronSource properties.
             AdProperties.ironSourceSettings = AdProperties.mainProperty.FindPropertyRelative("mIronSource");

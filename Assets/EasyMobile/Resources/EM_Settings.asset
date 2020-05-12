@@ -72,6 +72,7 @@ MonoBehaviour:
         keys: []
         values: []
     mAppLovin:
+      mEnableTestMode: 0
       mAgeRestrictMode: 0
       mSDKKey: 
       mDefaultBannerAdId:
@@ -117,13 +118,9 @@ MonoBehaviour:
     mChartboost:
       mCustomInterstitialPlacements: []
       mCustomRewardedPlacements: []
-    mFairBid:
+    mHeyzap:
       mPublisherId: 
       mShowTestSuite: 0
-      mDefaultBannerId: 
-      mDefaultInterstitialAdId: 
-      mDefaultRewardedAdId: 
-      mCustomBannerPlacements: []
       mCustomInterstitialPlacements: []
       mCustomRewardedPlacements: []
     mIronSource:
@@ -330,4 +327,4 @@ MonoBehaviour:
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0
   mActiveModuleIndex: 3
-  mIsSelectingModule: 0
+  mIsSelectingModule: 1

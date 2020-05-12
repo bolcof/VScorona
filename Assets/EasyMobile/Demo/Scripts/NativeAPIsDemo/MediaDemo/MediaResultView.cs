@@ -27,11 +27,8 @@ namespace EasyMobile.Demo
         private string error = null;
 
         public Color VideoBackground { get; set; }
-
-#if UNITY_IOS || UNITY_ANDROID
         public FullScreenMovieControlMode VideoControlMode { get; set; }
         public FullScreenMovieScalingMode VideoScalingMode { get; set; }
-#endif
 
         public int MaxImageSize
         {
@@ -99,9 +96,7 @@ namespace EasyMobile.Demo
 
         private void PlayVideo()
         {
-#if UNITY_IOS || UNITY_ANDROID
             Handheld.PlayFullScreenMovie(model.Uri, VideoBackground, VideoControlMode, VideoScalingMode);
-#endif
         }
 
         private void LoadImageCallback(string error, Texture2D image)
