@@ -235,7 +235,9 @@ MonoBehaviour:
       _id: amabie.noads
       _price: 
       _description: 
-      _storeSpecificIds: []
+      _storeSpecificIds:
+      - store: 6
+        id: 
       _isEditingAdvanced: 1
   mNotificationSettings:
     mAutoInit: 1

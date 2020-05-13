@@ -75,9 +75,9 @@ public class PlayerBehaviour : MonoBehaviour
             posX = exPosX + ((nowTouchX - exPosX) * 0.48f);
 
             PlayTime += Time.deltaTime;
-            if (PlayTime > 12.0f)
+            if (PlayTime > 12.5f)
             {
-                speed += 2.05f;
+                speed += 1.75f;
                 PlayTime = 0.0f;
                 this.gameObject.GetComponent<Animator>().SetFloat("Speed", speed * 0.05f);
             }

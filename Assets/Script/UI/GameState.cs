@@ -9,8 +9,8 @@ public class GameState : MonoBehaviour
     public int MissionCleared = 0;
     public float EarnedMoney;
 
-    private int[] LevelUpLib = {6, 13, 20, 9999};
-    private int nextLevel = 6;
+    private int[] LevelUpLib = {4, 7, 10, 15, 9999};
+    private int nextLevel = 4;
 
     private PlayerBehaviour Player;
 
@@ -38,7 +38,7 @@ public class GameState : MonoBehaviour
     public void MissionClear()
     {
         MissionCleared++;
-        Player.speed += 0.8f;
+        Player.speed += 0.62f;
         if (MissionCleared >= nextLevel)
         {
             nextLevel += LevelUpLib[Level];

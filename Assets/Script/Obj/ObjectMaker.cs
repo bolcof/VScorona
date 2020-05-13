@@ -14,7 +14,7 @@ public class ObjectMaker : MonoBehaviour
     public GameObject Mask, Amabie;
 
     public GameObject[] UnitFrame = new GameObject[2];
-    int[,] EnemyNumLib = { { 0, 0, 1, 1, 1, 2 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 2, 2, 2, 3 }, { 1, 2, 2, 3, 3, 3 }, { 2, 2, 3, 3, 3, 4 } };
+    int[,] EnemyNumLib = { { 0, 0, 0, 1, 1, 1, 1}, { 0, 1, 1, 1, 1, 1, 2 }, { 1, 1, 1, 1, 2, 2, 2 }, { 1, 1, 2, 2, 2, 2, 3 }, { 1, 2, 2, 3, 3, 3, 3 } };
 
     public Shop.DISHTYPE nowDishType  = global::Shop.DISHTYPE.NONE;
 
@@ -33,6 +33,8 @@ public class ObjectMaker : MonoBehaviour
         for(int i = 36; i <= exSpawnPos; i += distance)
         {
             Spawn(i, 0);
+            NoShopLog++;
+            NoMuchCustomerLog++;
         }
     }
 
@@ -51,7 +53,7 @@ public class ObjectMaker : MonoBehaviour
         //Virus
         GameObject Unit = Instantiate(UnitFrame[1], new Vector3(0.0f, 0.0f, posZ), Quaternion.identity, ObjRoot.transform);
 
-        int EnemyNum = EnemyNumLib[Level, Random.Range(0, 6)];
+        int EnemyNum = EnemyNumLib[Level, Random.Range(0, 7)];
 
         bool[] tmp = Combination(Unit.GetComponent<ObjUnit>().Slot, EnemyNum);
         for(int i = 0; i < Unit.GetComponent<ObjUnit>().Slot; i++)
@@ -107,15 +109,24 @@ public class ObjectMaker : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            int seeds = Random.Range(0, 30);
+            if (seeds <= 3)
+            {
+                GameObject choose = Customer[seeds];
+                SpawnCustomer(choose, posZ, shopPosX);
+            }
+        }
 
         //Special
         float SpecialSeed = Random.Range(0, 100.0f);
         //Debug.Log((NoSpecialLog * 0.5f - 13.5f).ToString());
-        if (SpecialSeed <= NoSpecialLog * 0.5f - 13.5f)
+        if (SpecialSeed <= NoSpecialLog * 0.45f - 13.5f)
         {
             if(PlayerObj.GetComponent<PlayerBehaviour>().Mask < 2)
             {
-                GameObject Spawned = Random.Range(0.0f, 1.2f) > 0.4f ? Mask : Amabie;
+                GameObject Spawned = Random.Range(0.0f, 1.2f) < 0.35 * (2 - PlayerObj.GetComponent<PlayerBehaviour>().Mask) ? Mask : Amabie;
                 SpawnSpecial(Spawned, posZ + (distance / 2));
             }
             else
@@ -160,7 +171,7 @@ public class ObjectMaker : MonoBehaviour
     private float SpawnShop(GameObject target, float posZ)
     {
         float seed = Random.Range(0.0f, 1.0f) > 0.5f ? 1.0f : -1.0f;
-        float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 11.0f : 4.2f;
+        float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 11.0f : 4.4f;
 
         GameObject tmp = Instantiate(target, new Vector3(seed * 3.9f, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
         tmp.transform.localScale = new Vector3(seed, 1.0f, 1.0f);
@@ -171,7 +182,7 @@ public class ObjectMaker : MonoBehaviour
     private void SpawnCustomer(GameObject target, float posZ, float ShopSeed)
     {
         float seed = ShopSeed * -1;
-        float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 7.0f : 13.8f;
+        float diff = Random.Range(0.0f, 1.0f) > 0.5f ? 7.0f : 13.6f;
 
         GameObject tmp = Instantiate(target, new Vector3(seed * 4.1f, 0.0f, posZ + diff), Quaternion.identity, ObjRoot.transform);
         tmp.transform.localScale = new Vector3(seed, 1.0f, 1.0f);
