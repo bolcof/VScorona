@@ -150,7 +150,7 @@ public class StartWindow : MonoBehaviour
         this.gameObject.GetComponent<Animator>().SetBool("Open", false);
         
         HowtoPanel.GetComponent<Animator>().SetBool("Open", true);
-
+        HowtoPanel.GetComponent<how2PlayScript>().returnZeroPage();
     }
 
     public void goResult()

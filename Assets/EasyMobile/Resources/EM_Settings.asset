@@ -224,12 +224,19 @@ MonoBehaviour:
   mInAppPurchaseSettings:
     mAutoInit: 1
     mTargetAndroidStore: 0
-    mSimulateAppleAskToBuy: 0
+    mSimulateAppleAskToBuy: 1
     mInterceptApplePromotionalPurchases: 0
     mEnableAmazonSandboxTesting: 0
-    mValidateAppleReceipt: 0
-    mValidateGooglePlayReceipt: 0
-    mProducts: []
+    mValidateAppleReceipt: 1
+    mValidateGooglePlayReceipt: 1
+    mProducts:
+    - _name: NoAds
+      _type: 1
+      _id: amabie.noads
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 1
   mNotificationSettings:
     mAutoInit: 1
     mAutoInitDelay: 0
@@ -327,4 +334,4 @@ MonoBehaviour:
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0
   mActiveModuleIndex: 3
-  mIsSelectingModule: 1
+  mIsSelectingModule: 0

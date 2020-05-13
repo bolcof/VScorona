@@ -168,7 +168,7 @@ PlayerSettings:
     iPhone: com.butterflyeffect.amabie-eats
   buildNumber:
     iPhone: 5
-  AndroidBundleVersionCode: 2
+  AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 28
   AndroidPreferredInstallLocation: 1
