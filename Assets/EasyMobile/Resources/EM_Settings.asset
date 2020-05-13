@@ -232,12 +232,14 @@ MonoBehaviour:
     mProducts:
     - _name: NoAds
       _type: 1
-      _id: amabie.noads
-      _price: 
-      _description: 
+      _id: com.butterflyeffect.amabieeats.noads
+      _price: "\u5E83\u544A\u975E\u8868\u793A"
+      _description: "\u5E83\u544A\u3092\u975E\u8868\u793A\u306B\u3057\u307E\u3059\u3002\uFF08\u5229\u76CA\u306F\u4F11\u696D\u4E2D\u306E\u696D\u754C\u3078\u9084\u5143\u3057\u307E\u3059\uFF09"
       _storeSpecificIds:
       - store: 6
-        id: 
+        id: com.butterflyeffect.amabieeats.noads
+      - store: 0
+        id: com.butterflyeffect.amabieeats.noads
       _isEditingAdvanced: 1
   mNotificationSettings:
     mAutoInit: 1
