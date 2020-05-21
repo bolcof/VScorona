@@ -147,10 +147,6 @@ public class PlayerBehaviour : MonoBehaviour
                     Debug.Log("Enemy");
                     if (!Resist)
                     {
-                        if (PlayerPrefs.GetInt("Mute", 0) == 0)
-                        {
-                            AS.PlayOneShot(EnemyHit);
-                        }
                         Mask--;
                         if (Mask == -1)
                         {
@@ -160,6 +156,10 @@ public class PlayerBehaviour : MonoBehaviour
                         }
                         else
                         {
+                            if (PlayerPrefs.GetInt("Mute", 0) == 0)
+                            {
+                                AS.PlayOneShot(EnemyHit);
+                            }
                             GetBarriar(1.8f);
                         }
                         maskText.text = Mask.ToString();

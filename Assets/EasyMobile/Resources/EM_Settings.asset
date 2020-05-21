@@ -233,11 +233,13 @@ MonoBehaviour:
     - _name: NoAds
       _type: 1
       _id: amabie.noads
-      _price: 
-      _description: 
+      _price: "\uFFE5120"
+      _description: "\u5E83\u544A\u3092\u975E\u8868\u793A\u306B\u3057\u307E\u3059\u3002\uFF08\u5229\u76CA\u306F\u4F11\u696D\u4E2D\u306E\u696D\u754C\u3078\u9084\u5143\u3057\u307E\u3059\u3002\uFF09"
       _storeSpecificIds:
       - store: 6
-        id: 
+        id: amabie.noads
+      - store: 0
+        id: amabie.noads
       _isEditingAdvanced: 1
   mNotificationSettings:
     mAutoInit: 1

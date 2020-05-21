@@ -91,7 +91,6 @@ public class OptionWindow : MonoBehaviour
     // Successful restoration handler
     void RestoreCompletedHandler()
     {
-        PlayerPrefs.SetInt("noAds", 1);
         Debug.Log("All purchases have been restored successfully.");
     }
 

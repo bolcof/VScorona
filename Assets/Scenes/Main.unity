@@ -320,7 +320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1761338100001004313, guid: 1020099ef349c52489f6358e624170f4,
+  m_Sprite: {fileID: 3823623766657365831, guid: 3a82838c678793c4c8b5aff3e1379346,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3595000681313952371, guid: 31a297bd80017544eac2036168d7541e,
+  m_Sprite: {fileID: -646789857003419285, guid: 4ca18c6a9524bb4468c6ec175c6ac0ae,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5886095181098861034, guid: 1020099ef349c52489f6358e624170f4,
+  m_Sprite: {fileID: 4918430783431970167, guid: 4ca18c6a9524bb4468c6ec175c6ac0ae,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1219,7 +1219,7 @@ MonoBehaviour:
   AS: {fileID: 438019874}
   dicide: {fileID: 8300000, guid: b6bcd14843faef848bef198cb3bbc825, type: 3}
   cancel: {fileID: 8300000, guid: 7c6eeb47d82763a4d807109f5fd5969f, type: 3}
-  Mitsu: {fileID: 8300000, guid: 5b1ecc7ca6ca1c44fbe90d3409227565, type: 3}
+  Mitsu: {fileID: 8300000, guid: e25ccb92d08bc2841a3fdd979fda00ac, type: 3}
   crap: {fileID: 8300000, guid: c7b5fba5765502a42a495917a55ac7bc, type: 3}
   isDebug: 1
 --- !u!95 &438019873
@@ -1890,7 +1890,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3502621688389861715, guid: 31a297bd80017544eac2036168d7541e,
+  m_Sprite: {fileID: 6839960018944070908, guid: 3a82838c678793c4c8b5aff3e1379346,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4972,7 +4972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2619315401698343498, guid: 31a297bd80017544eac2036168d7541e,
+  m_Sprite: {fileID: -7466859437446363963, guid: 3a82838c678793c4c8b5aff3e1379346,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5628,7 +5628,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 58b8b99dfae9e5c4c9f1c9287bf046c5, type: 3}
   - {fileID: 8300000, guid: d08a43039e09b504db1a25707b398538, type: 3}
   SpeedyAudio: {fileID: 8300000, guid: 0fc399abe37b1e54e934d2925888c8d7, type: 3}
-  EnemyHit: {fileID: 8300000, guid: 08e09036e1fc69f4eaf055009518b008, type: 3}
+  EnemyHit: {fileID: 8300000, guid: da68e92dcc943e14ca3a713cffedc73a, type: 3}
   MaskSE: {fileID: 8300000, guid: 7d661cdf0c6f5ae4fb97397acccce38a, type: 3}
   AmabieSE: {fileID: 8300000, guid: 6617c2d324a6b1747a157c3cc1dc26c7, type: 3}
   BarriarAnim: {fileID: 2041229408}

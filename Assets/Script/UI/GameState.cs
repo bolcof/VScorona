@@ -16,6 +16,8 @@ public class GameState : MonoBehaviour
 
     public Text ResultMonay, ResultCleared, ResultRank;
 
+    private int scshCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,8 @@ public class GameState : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             Debug.Log("Screen Shot");
-            ScreenCapture.CaptureScreenshot("image_.png");
+            ScreenCapture.CaptureScreenshot("image_" + scshCount.ToString() +".png");
+            scshCount++;
         }
     }
 
