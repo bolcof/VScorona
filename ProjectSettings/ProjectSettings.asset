@@ -168,7 +168,7 @@ PlayerSettings:
     iPhone: com.butterflyeffect.amabie-eats
   buildNumber:
     iPhone: 1
-  AndroidBundleVersionCode: 93
+  AndroidBundleVersionCode: 1101
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 28
   AndroidPreferredInstallLocation: 1
@@ -269,7 +269,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 1
+  androidUseCustomKeystore: 0
   m_AndroidBanners:
   - width: 320
     height: 180
