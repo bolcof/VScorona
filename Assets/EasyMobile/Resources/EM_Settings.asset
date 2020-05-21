@@ -229,7 +229,14 @@ MonoBehaviour:
     mEnableAmazonSandboxTesting: 0
     mValidateAppleReceipt: 1
     mValidateGooglePlayReceipt: 1
-    mProducts: []
+    mProducts:
+    - _name: 
+      _type: 0
+      _id: 
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
   mNotificationSettings:
     mAutoInit: 1
     mAutoInitDelay: 0
@@ -326,5 +333,5 @@ MonoBehaviour:
   mIsGameServiceModuleEnable: 0
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0
-  mActiveModuleIndex: 0
+  mActiveModuleIndex: 3
   mIsSelectingModule: 1

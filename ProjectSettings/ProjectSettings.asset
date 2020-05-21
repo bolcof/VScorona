@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.9
+  bundleVersion: 1.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -167,7 +167,7 @@ PlayerSettings:
     Android: com.butterflyeffect.amabieeats
     iPhone: com.butterflyeffect.amabie-eats
   buildNumber:
-    iPhone: 3
+    iPhone: 1
   AndroidBundleVersionCode: 93
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 28
