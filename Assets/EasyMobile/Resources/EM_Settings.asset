@@ -224,23 +224,12 @@ MonoBehaviour:
   mInAppPurchaseSettings:
     mAutoInit: 1
     mTargetAndroidStore: 0
-    mSimulateAppleAskToBuy: 1
+    mSimulateAppleAskToBuy: 0
     mInterceptApplePromotionalPurchases: 0
     mEnableAmazonSandboxTesting: 0
     mValidateAppleReceipt: 1
     mValidateGooglePlayReceipt: 1
-    mProducts:
-    - _name: NoAds
-      _type: 1
-      _id: amabie.noads
-      _price: "\uFFE5120"
-      _description: "\u5E83\u544A\u3092\u975E\u8868\u793A\u306B\u3057\u307E\u3059\u3002\uFF08\u5229\u76CA\u306F\u4F11\u696D\u4E2D\u306E\u696D\u754C\u3078\u9084\u5143\u3057\u307E\u3059\u3002\uFF09"
-      _storeSpecificIds:
-      - store: 6
-        id: amabie.noads
-      - store: 0
-        id: amabie.noads
-      _isEditingAdvanced: 1
+    mProducts: []
   mNotificationSettings:
     mAutoInit: 1
     mAutoInitDelay: 0
@@ -333,9 +322,9 @@ MonoBehaviour:
       - mKey: NSContactsUsageDescription
         mValue: '[Your usage description]'
   mIsAdModuleEnable: 0
-  mIsIAPModuleEnable: 1
+  mIsIAPModuleEnable: 0
   mIsGameServiceModuleEnable: 0
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0
-  mActiveModuleIndex: 3
-  mIsSelectingModule: 0
+  mActiveModuleIndex: 0
+  mIsSelectingModule: 1

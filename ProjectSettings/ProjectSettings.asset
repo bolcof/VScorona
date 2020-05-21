@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: butterflyeffect
-  productName: AMABIE EATS
+  productName: Amabie Eats
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.5
+  bundleVersion: 0.9
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -167,8 +167,8 @@ PlayerSettings:
     Android: com.butterflyeffect.amabieeats
     iPhone: com.butterflyeffect.amabie-eats
   buildNumber:
-    iPhone: 1
-  AndroidBundleVersionCode: 51
+    iPhone: 3
+  AndroidBundleVersionCode: 93
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 28
   AndroidPreferredInstallLocation: 1
@@ -750,18 +750,18 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    4: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    7: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    13: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    14: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    19: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    21: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    25: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    26: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    27: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    28: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
-    29: EASY_MOBILE;EASY_MOBILE_PRO;EM_UIAP
+    1: EASY_MOBILE;EASY_MOBILE_PRO
+    4: EASY_MOBILE;EASY_MOBILE_PRO
+    7: EASY_MOBILE;EASY_MOBILE_PRO
+    13: EASY_MOBILE;EASY_MOBILE_PRO
+    14: EASY_MOBILE;EASY_MOBILE_PRO
+    19: EASY_MOBILE;EASY_MOBILE_PRO
+    21: EASY_MOBILE;EASY_MOBILE_PRO
+    25: EASY_MOBILE;EASY_MOBILE_PRO
+    26: EASY_MOBILE;EASY_MOBILE_PRO
+    27: EASY_MOBILE;EASY_MOBILE_PRO
+    28: EASY_MOBILE;EASY_MOBILE_PRO
+    29: EASY_MOBILE;EASY_MOBILE_PRO
   platformArchitecture: {}
   scriptingBackend:
     Android: 1

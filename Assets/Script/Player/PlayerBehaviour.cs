@@ -185,7 +185,7 @@ public class PlayerBehaviour : MonoBehaviour
                     Debug.Log("Customer_" + other.GetComponent<Customer>().DishType);
                     if (DishType == other.GetComponent<Customer>().DishType)
                     {
-                        if(DeliveryTime <= 3.0f)
+                        if(DeliveryTime <= 2.5f)
                         {
                             Speedy.GetComponent<Animator>().SetBool("Speedy", true);
                             Speedy.GetComponent<Text>().text = "超速達！";
@@ -195,7 +195,7 @@ public class PlayerBehaviour : MonoBehaviour
                                 AS.PlayOneShot(SpeedyAudio);
                             }
                         }
-                        else if(DeliveryTime <= 6.0f)
+                        else if(DeliveryTime <= 7.5f)
                         {
                             Speedy.GetComponent<Animator>().SetBool("Speedy", true);
                             Speedy.GetComponent<Text>().text = "速達！";
