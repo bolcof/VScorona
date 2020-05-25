@@ -60,6 +60,7 @@ public class how2PlayScript : MonoBehaviour
             else if (pages == 5)
             {
                 pushClose();
+                pages = 0;
             }
         }
 

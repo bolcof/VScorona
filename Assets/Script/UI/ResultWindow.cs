@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using EasyMobile;
+// using EasyMobile;
 
 public class ResultWindow : MonoBehaviour
 {
@@ -36,7 +36,7 @@ public class ResultWindow : MonoBehaviour
 
         // The SaveScreenshot() method returns the path of the saved image
         // The provided file name will be added a ".png" extension automatically
-        string path = Sharing.SaveScreenshot("screenshot");
+        // string path = Sharing.SaveScreenshot("screenshot");
 
         // Share a saved image
         // Suppose we have a "screenshot.png" image stored in the persistentDataPath,
@@ -53,7 +53,7 @@ public class ResultWindow : MonoBehaviour
         {
             tweetText = "You got $" + (Gstate.EarnedMoney/100).ToString("F2") + "! #AmabieEats #StayHome";
         }
-        Sharing.ShareImage(path, tweetText);
+        // Sharing.ShareImage(path, tweetText);
 
         Debug.Log("Finish EM share");
     }

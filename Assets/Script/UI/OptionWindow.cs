@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EasyMobile;
 using UnityEngine.UI;
 
 public class OptionWindow : MonoBehaviour
@@ -14,7 +13,7 @@ public class OptionWindow : MonoBehaviour
     private void Start()
     {
         // Initialize the IAP module
-        InAppPurchasing.InitializePurchasing();
+        // InAppPurchasing.InitializePurchasing();
 
 #if UNITY_IOS && !UNITY_EDITOR
         // Restore purchases. This method only has effect on iOS.
@@ -55,38 +54,38 @@ public class OptionWindow : MonoBehaviour
         }
     }
 
-    public void pushNoAds()
-    {// Purchase a product using its name
-     // EM_IAPConstants.Sample_Product is the generated name constant of a product named "Sample Product"
-        InAppPurchasing.Purchase(EM_IAPConstants.Product_NoAds);
-    }
+    // public void pushNoAds()
+    // {// Purchase a product using its name
+    //  // EM_IAPConstants.Sample_Product is the generated name constant of a product named "Sample Product"
+    //     InAppPurchasing.Purchase(EM_IAPConstants.Product_NoAds);
+    // }
     
     // Successful purchase handler
-    void PurchaseCompletedHandler(IAPProduct product)
-    {
-        // Compare product name to the generated name constants to determine which product was bought
-        switch (product.Name)
-        {
-            case EM_IAPConstants.Product_NoAds:
-                Debug.Log("Sample_Product was purchased. The user should be granted it now.");
-                PlayerPrefs.SetInt("noAds", 1);
-                break;
-                // More products here...
-        }
-    }
+    // void PurchaseCompletedHandler(IAPProduct product)
+    // {
+    //     // Compare product name to the generated name constants to determine which product was bought
+    //     switch (product.Name)
+    //     {
+    //         case EM_IAPConstants.Product_NoAds:
+    //             Debug.Log("Sample_Product was purchased. The user should be granted it now.");
+    //             PlayerPrefs.SetInt("noAds", 1);
+    //             break;
+    //             // More products here...
+    //     }
+    // }
 
     // Failed purchase handler
-    void PurchaseFailedHandler(IAPProduct product)
-    {
-        Debug.Log("The purchase of product " + product.Name + " has failed.");
-    }
+    // void PurchaseFailedHandler(IAPProduct product)
+    // {
+    //     Debug.Log("The purchase of product " + product.Name + " has failed.");
+    // }
     
-    // Subscribe to IAP restore events, these events are fired on iOS only.
-    void OnEnable()
-    {
-        InAppPurchasing.RestoreCompleted += RestoreCompletedHandler;
-        InAppPurchasing.RestoreFailed += RestoreFailedHandler;
-    }
+    // // Subscribe to IAP restore events, these events are fired on iOS only.
+    // void OnEnable()
+    // {
+    //     InAppPurchasing.RestoreCompleted += RestoreCompletedHandler;
+    //     InAppPurchasing.RestoreFailed += RestoreFailedHandler;
+    // }
 
     // Successful restoration handler
     void RestoreCompletedHandler()
@@ -104,7 +103,7 @@ public class OptionWindow : MonoBehaviour
     // Unsubscribe
     void OnDisable()
     {
-        InAppPurchasing.RestoreCompleted -= RestoreCompletedHandler;
-        InAppPurchasing.RestoreFailed -= RestoreFailedHandler;
+        // InAppPurchasing.RestoreCompleted -= RestoreCompletedHandler;
+        // InAppPurchasing.RestoreFailed -= RestoreFailedHandler;
     }
 }
